@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge React App",
+  "Type": "App",
+  "Id": "8It1MiGAJ0uYPgNszFCcsw",
+  "Reference": "3GePU76oyEypRLuIiaq_hw/8It1MiGAJ0uYPgNszFCcsw",
+  "Created": "2025-04-15T10:23:26.855784Z",
+  "Updated": "2025-04-15T10:23:26.855784Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

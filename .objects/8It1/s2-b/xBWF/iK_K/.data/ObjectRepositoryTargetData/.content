@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7V9im0LPHkq0spbKEP9v-A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/customers/create" CVScreenId="e8e4fff5-57e6-4682-8de0-7069c7a701aa" CvElementArea="395, 742, 212, 63" CvTextArea="424, 765, 150, 18" CvTextArgument="Create Customer" CvType="Button" DesignTimeRectangle="397, 743, 208, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='submit-button' aaname='Create Customer' check:innerText='Create Customer' /&gt;" Guid="7a176cfa-f859-467f-9b7f-cc65cea02d6d" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="36cc10195ed19673b51c11c66101f6e3.png" xmlns="">0WZMRHssB3kKTYx7z4jHBsA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

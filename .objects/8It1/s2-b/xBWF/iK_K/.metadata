@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Create Customer",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "iK_KdrhFW0GRb1VJOYhciA",
+  "Reference": "3GePU76oyEypRLuIiaq_hw/iK_KdrhFW0GRb1VJOYhciA",
+  "ParentRef": "3GePU76oyEypRLuIiaq_hw/xBWFqQo060OD-04fwIFe2Q",
+  "Created": "2025-04-16T10:51:23.0076855Z",
+  "Updated": "2025-04-16T10:51:23.0076855Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

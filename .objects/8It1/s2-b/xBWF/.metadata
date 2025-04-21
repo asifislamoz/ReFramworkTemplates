@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge React App",
+  "Type": "Screen",
+  "Id": "xBWFqQo060OD-04fwIFe2Q",
+  "Reference": "3GePU76oyEypRLuIiaq_hw/xBWFqQo060OD-04fwIFe2Q",
+  "ParentRef": "3GePU76oyEypRLuIiaq_hw/s2-bCVYRtkCYTbqMobPlOQ",
+  "Created": "2025-04-15T10:23:27.0341519Z",
+  "Updated": "2025-04-15T10:23:27.0341519Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

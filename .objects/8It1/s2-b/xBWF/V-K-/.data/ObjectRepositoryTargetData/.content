@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KKVOGbm_CUKtfPdhi8aH0A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/customers/create" CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" CvElementArea="393, 311, 1441, 61" CvType="InputBox" DesignTimeRectangle="397, 313, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='' aaname='First Name' /&gt;" Guid="0ff2718a-5b9b-499c-8766-25e4b2fd17eb" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" CvTextArea="395, 284, 102, 18" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="397, 277, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='First Name' check:innerText='First Name' /&gt;" Guid="3bf83ab3-014e-4df7-9db2-a16d26e73d7c" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="dcb95bd7e24c05262edc09d6341d47dc.png" xmlns="">0waIYulxT9U-jySTUmO6SVQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

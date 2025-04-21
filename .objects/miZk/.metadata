@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Use UI automation to navigate to the screen",
+  "Type": "App",
+  "Id": "miZk6NX9pEWdKlhkEjKXkg",
+  "Reference": "3GePU76oyEypRLuIiaq_hw/miZk6NX9pEWdKlhkEjKXkg",
+  "Created": "2025-04-15T10:29:39.8468323Z",
+  "Updated": "2025-04-15T10:29:39.8468323Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

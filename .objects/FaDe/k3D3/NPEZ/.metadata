@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Insert username and password into text field",
+  "Type": "Screen",
+  "Id": "NPEZMiT4WkyPZ_OfsMHDHQ",
+  "Reference": "3GePU76oyEypRLuIiaq_hw/NPEZMiT4WkyPZ_OfsMHDHQ",
+  "ParentRef": "3GePU76oyEypRLuIiaq_hw/k3D3c7EWZ0GPE9wuGfulag",
+  "Created": "2025-04-15T10:36:32.9330966Z",
+  "Updated": "2025-04-15T10:36:32.9330966Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

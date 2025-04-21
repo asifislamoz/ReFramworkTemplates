@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Insert username and password into text field",
+  "Type": "App",
+  "Id": "FaDeCv1zd0iByrFwzHAykg",
+  "Reference": "3GePU76oyEypRLuIiaq_hw/FaDeCv1zd0iByrFwzHAykg",
+  "Created": "2025-04-15T10:36:32.8997652Z",
+  "Updated": "2025-04-15T10:36:32.8997652Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
