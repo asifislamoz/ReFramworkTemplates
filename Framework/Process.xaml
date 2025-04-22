@@ -1,8 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_appWindow" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_CustomerId" Type="OutArgument(x:Int32)" />
+    <x:Property Name="out_TransactionId" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1157,657</sap:VirtualizedContainerService.HintSize>
@@ -38,6 +41,9 @@
       <x:String>System.Collections</x:String>
       <x:String>UiPath.UIAutomationNext.Models</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,139 +106,226 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="860.0000000000001,1660.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1172,2473.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="CustomerId" />
+      <Variable x:TypeArguments="x:String" Name="TransactionId" />
+      <Variable x:TypeArguments="x:String" Name="FirstName" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="552,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"Started Process"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="449.6,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="449.6,1299.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1139.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" ContentHash="KKVOGbm_CUKtfPdhi8aH0A" CvElementArea="393, 311, 1441, 61" CvType="InputBox" DesignTimeRectangle="397, 313, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='' aaname='First Name' /&gt;" Guid="0ff2718a-5b9b-499c-8766-25e4b2fd17eb" InformativeScreenshot="dcb95bd7e24c05262edc09d6341d47dc.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/V-K-H_xXTUib7cLRQVIgbw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" CvTextArea="395, 284, 102, 18" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="397, 277, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='First Name' check:innerText='First Name' /&gt;" Guid="3bf83ab3-014e-4df7-9db2-a16d26e73d7c" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">in_TransactionItem.SpecificContent.GetValueOrDefault("First Name").ToString()</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-              <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionTypeIntoOptions.Retry>
-                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                </uix:VerifyExecutionTypeIntoOptions>
-              </uix:NTypeInto.VerifyOptions>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" ContentHash="znAMfqVkSkebB3akeoUDog" CvElementArea="392, 404, 1443, 61" CvType="InputBox" DesignTimeRectangle="397, 406, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='' aaname='Last Name' /&gt;" Guid="6c5b95a6-a54b-4434-80c0-e05b3c991c7e" InformativeScreenshot="10fb2dc5f68615f1538c68deb87cac7d.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/Dq2blPEDYkGRXr1C2ybMFQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" CvTextArea="395, 377, 101, 17" CvTextArgument="Last Name" CvType="Text" DesignTimeRectangle="397, 370, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='' check:innerText='Last Name' /&gt;" Guid="43bbd17b-16c7-4b45-b741-10f8517c908f" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_TransactionItem.SpecificContent.GetValueOrDefault("Last Name").ToString()</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-              <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionTypeIntoOptions.Retry>
-                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                </uix:VerifyExecutionTypeIntoOptions>
-              </uix:NTypeInto.VerifyOptions>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" ContentHash="hjcPfPG_-kuEMPzmS-apJQ" CvElementArea="391, 496, 1445, 61" CvType="InputBox" DesignTimeRectangle="397, 499, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='email' class='' aaname='Email' /&gt;" Guid="917406bf-8832-4853-bdf1-cd71bbc3ec50" InformativeScreenshot="8d0145709a7e0824d1c969d635554a84.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/mZ7gm4UF6UakUItxwvn6pw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" CvTextArea="395, 469, 52, 20" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="397, 463, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' check:innerText='Email' /&gt;" Guid="0185f10f-1feb-46ad-b2cd-cd3e7bbb82b9" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">in_TransactionItem.SpecificContent.GetValueOrDefault("Email").ToString()</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-              <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionTypeIntoOptions.Retry>
-                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                </uix:VerifyExecutionTypeIntoOptions>
-              </uix:NTypeInto.VerifyOptions>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create Customer'" sap:VirtualizedContainerService.HintSize="382.4,218.4" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="e8e4fff5-57e6-4682-8de0-7069c7a701aa" ContentHash="7V9im0LPHkq0spbKEP9v-A" CvElementArea="395, 742, 212, 63" CvTextArea="424, 765, 150, 18" CvTextArgument="Create Customer" CvType="Button" DesignTimeRectangle="397, 743, 208, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='submit-button' aaname='Create Customer' check:innerText='Create Customer' /&gt;" Guid="7a176cfa-f859-467f-9b7f-cc65cea02d6d" InformativeScreenshot="36cc10195ed19673b51c11c66101f6e3.png" Reference="3GePU76oyEypRLuIiaq_hw/iK_KdrhFW0GRb1VJOYhciA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.InUiElement>
-        <InArgument x:TypeArguments="ui:UiElement">
-          <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">in_appWindow</CSharpValue>
-        </InArgument>
-      </uix:NApplicationCard.InUiElement>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" Version="V1" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+    <Sequence DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="552,651.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">
+            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">CustomerId</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">
+            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Convert.ToInt32((in_TransactionItem["CustomerId"]))</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">TransactionId</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_TransactionItem["TransactionId"].ToString()</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">
+            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">out_CustomerId</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">
+            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">CustomerId</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">out_TransactionId</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">TransactionId</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">FirstName</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_TransactionItem["FirstName"].ToString()</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="552,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,1460.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="516.8,1359.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="483.2,1299.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1139.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" ContentHash="KKVOGbm_CUKtfPdhi8aH0A" CvElementArea="393, 311, 1441, 61" CvType="InputBox" DesignTimeRectangle="397, 313, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='' aaname='First Name' /&gt;" Guid="0ff2718a-5b9b-499c-8766-25e4b2fd17eb" InformativeScreenshot="dcb95bd7e24c05262edc09d6341d47dc.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/V-K-H_xXTUib7cLRQVIgbw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" CvTextArea="395, 284, 102, 18" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="397, 277, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='First Name' check:innerText='First Name' /&gt;" Guid="3bf83ab3-014e-4df7-9db2-a16d26e73d7c" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">in_TransactionItem.SpecificContent.GetValueOrDefault("First Name").ToString()</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" ContentHash="znAMfqVkSkebB3akeoUDog" CvElementArea="392, 404, 1443, 61" CvType="InputBox" DesignTimeRectangle="397, 406, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='' aaname='Last Name' /&gt;" Guid="6c5b95a6-a54b-4434-80c0-e05b3c991c7e" InformativeScreenshot="10fb2dc5f68615f1538c68deb87cac7d.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/Dq2blPEDYkGRXr1C2ybMFQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" CvTextArea="395, 377, 101, 17" CvTextArgument="Last Name" CvType="Text" DesignTimeRectangle="397, 370, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='' check:innerText='Last Name' /&gt;" Guid="43bbd17b-16c7-4b45-b741-10f8517c908f" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_TransactionItem.SpecificContent.GetValueOrDefault("Last Name").ToString()</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" ContentHash="hjcPfPG_-kuEMPzmS-apJQ" CvElementArea="391, 496, 1445, 61" CvType="InputBox" DesignTimeRectangle="397, 499, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='email' class='' aaname='Email' /&gt;" Guid="917406bf-8832-4853-bdf1-cd71bbc3ec50" InformativeScreenshot="8d0145709a7e0824d1c969d635554a84.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/mZ7gm4UF6UakUItxwvn6pw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" CvTextArea="395, 469, 52, 20" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="397, 463, 1438, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' check:innerText='Email' /&gt;" Guid="0185f10f-1feb-46ad-b2cd-cd3e7bbb82b9" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">in_TransactionItem.SpecificContent.GetValueOrDefault("Email").ToString()</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create Customer'" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="e8e4fff5-57e6-4682-8de0-7069c7a701aa" ContentHash="7V9im0LPHkq0spbKEP9v-A" CvElementArea="395, 742, 212, 63" CvTextArea="424, 765, 150, 18" CvTextArgument="Create Customer" CvType="Button" DesignTimeRectangle="397, 743, 208, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='submit-button' aaname='Create Customer' check:innerText='Create Customer' /&gt;" Guid="7a176cfa-f859-467f-9b7f-cc65cea02d6d" InformativeScreenshot="36cc10195ed19673b51c11c66101f6e3.png" Reference="3GePU76oyEypRLuIiaq_hw/iK_KdrhFW0GRb1VJOYhciA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.InUiElement>
+              <InArgument x:TypeArguments="ui:UiElement">
+                <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">in_appWindow</CSharpValue>
+              </InArgument>
+            </uix:NApplicationCard.InUiElement>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" Version="V1" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
