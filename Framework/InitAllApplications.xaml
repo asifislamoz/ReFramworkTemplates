@@ -225,7 +225,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1172,4768" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1172,4606.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="appWindow" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="out_DbConnection" />
@@ -484,151 +484,140 @@ WHERE ms.CustomerId IS NULL"</CSharpValue>
         </TryCatch.Finally>
       </TryCatch>
     </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="619.2,1887.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="584,1776.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: React App" sap:VirtualizedContainerService.HintSize="550.4,1716.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" ScopeGuid="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V2">
-            <uix:NApplicationCard.Body>
-              <ActivityAction x:TypeArguments="x:Object">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="516.8,1476.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap:VirtualizedContainerService.HintSize="483.2,1415.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1328.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="OutArgument" Name="appWindow" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into ''Username''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Text="admin" Version="V4">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvElementArea="769, 598, 379, 51" CvType="InputBox" DesignTimeRectangle="772, 600, 375, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl class='form-control' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='form-control' tag='INPUT' type='text' placeholder='Enter your username' aaname='' /&gt;" Guid="c560eedb-a039-4a31-9403-0563705f068d" InformativeScreenshot="c602340d6faf69394af9b3c94bbe8567.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvTextArea="770, 567, 90, 17" CvTextArgument="Username" CvType="Text" DesignTimeRectangle="772, 560, 89, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='form-label' aaname='Username' check:innerText='Username' /&gt;" Guid="2eb25393-d2d4-43ab-870b-f33bbf8da226" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NTypeInto.Target>
-                        <uix:NTypeInto.VerifyOptions>
-                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                          </uix:VerifyExecutionTypeIntoOptions>
-                        </uix:NTypeInto.VerifyOptions>
-                      </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into ''Password''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Text="password" Version="V4">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvElementArea="771, 708, 377, 47" CvType="InputBox" DesignTimeRectangle="772, 707, 375, 47" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' placeholder='Enter your password' aaname='' /&gt;" Guid="99d9e5a3-f7f4-4402-aefa-80105360eb9d" InformativeScreenshot="aae06b899f8f89e3d90eaacfdf56045b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvTextArea="771, 674, 68, 18" CvTextArgument="Passwor" CvType="Text" DesignTimeRectangle="772, 667, 82, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='form-label' check:innerText='Password' /&gt;" Guid="61af73c1-8e11-4e83-a1dd-8947b9aadfa5" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NTypeInto.Target>
-                        <uix:NTypeInto.VerifyOptions>
-                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                          </uix:VerifyExecutionTypeIntoOptions>
-                        </uix:NTypeInto.VerifyOptions>
-                      </uix:NTypeInto>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Login''" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V4">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvElementArea="769, 773, 381, 51" CvTextArea="934, 789, 51, 25" CvTextArgument="Login" CvType="Button" DesignTimeRectangle="772, 774, 375, 47" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary w-100' aaname='Login' check:innerText='Login' /&gt;" Guid="b94456cc-ca2a-415f-91f4-af0d8b0b47d0" InformativeScreenshot="3726131962c43c264bc64b580cdbf9f6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
-                        </uix:NClick.Target>
-                        <uix:NClick.VerifyOptions>
-                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionOptions.Retry>
-                            <uix:VerifyExecutionOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionOptions.Timeout>
-                          </uix:VerifyExecutionOptions>
-                        </uix:NClick.VerifyOptions>
-                      </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Customers''" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V4">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/plan-management" DesignTimeRectangle="72, 364, 93, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Customers' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Customers' tag='A' type='' class='text-white text-decoration-none' check:innerText='Customers' /&gt;" Guid="c33b44ef-f9f1-414c-867f-dd1e681ea282" InformativeScreenshot="3f2bb7d268511ac5efa1d8958ffa1bab.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
-                        </uix:NClick.Target>
-                        <uix:NClick.VerifyOptions>
-                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionOptions.Retry>
-                            <uix:VerifyExecutionOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionOptions.Timeout>
-                          </uix:VerifyExecutionOptions>
-                        </uix:NClick.VerifyOptions>
-                      </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Add Customer''" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V4">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/customers" DesignTimeRectangle="1676, 197, 165, 43" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl class='nav-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-button' tag='BUTTON' type='' aaname='Add Customer' check:innerText='Add Customer' /&gt;" Guid="4d87d7e9-68ac-4550-88a0-5bac87a2896b" InformativeScreenshot="84caaf905d6f1a57ea599916c9a3035d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
-                        </uix:NClick.Target>
-                        <uix:NClick.VerifyOptions>
-                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionOptions.Retry>
-                            <uix:VerifyExecutionOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionOptions.Timeout>
-                          </uix:VerifyExecutionOptions>
-                        </uix:NClick.VerifyOptions>
-                      </uix:NClick>
-                    </Sequence>
-                  </Sequence>
-                </Sequence>
-              </ActivityAction>
-            </uix:NApplicationCard.Body>
-            <uix:NApplicationCard.OutUiElement>
-              <OutArgument x:TypeArguments="ui:UiElement">
-                <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">appWindow</CSharpReference>
-              </OutArgument>
-            </uix:NApplicationCard.OutUiElement>
-            <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAxESURBVFhHtdh5UJNnHgdwrBaPHAQP6E5nh866Mz3khhBAtNpaUQOBACGCVqylSqt1aXUtKIeKCsh9WERRt2rrbrtbu61rqyvkfXOQhACBkIQkBLwFa216Yist3533TTiMgPbY78xv8g/z5MPvOd4nr4vLr0ggcTsigLxR50detfpJL/f7SrvhK+2Cn8wCX7kRfvJO+jOgUTsQrG6yhWgaCV6zLN15nN89wcSX6UHk7d5A8hYCyD74kVfhJ70IX2kPfKUW+MrMNMxX3gE/RTv8G1sRpGoCV6NAaAuJ+doLgwvbP7Mu7vgkwnns35QQ4tv0YOJrWzBhQxBxG4Hk5wggb8CPvAI/8hIN9JGa4SPrhI/MAF+5Hr5yHQKUrQhQNSOoSYXQFinCtQ2IaDuHRbozWNr5vnWZ+dRvg/KIO148ol8bQnyLYOIrBBFfIpC4BX/yBvzJa/AjL9NAH6nVATTAR05VB3zkbfBrbEGgWo1AtQq8ZoLqIBa2n8Fz+tMUECssJxFtPUo4f+9DxY670x9CfA/uKCA1taOBPiSFs9BAb6kB3jI9vGU6+MjbaaC/UoNAlR3Ia5bQwGd1nziAxyHsqUH8pUqb+GqJl7Nh3PAkP4h5xJ1BHvE9qO5xia9pINW9IaAveRG+ZDd8yC54S02YJzVgnlSPeVIdvGXtdAd95Fr4NWoQoFIhuEkOXnPDqA7+HXzLOxBYDyH+UhVWXd/bn9KX+2BkqOSuF4/4YZBH9IMqLvENqLUXTE2vY3P4k9cdQGrtWRw4qnT2krXDmwZS09yMQFUjuE1ShDY3YEHbp1ik+zeWdZ7EctNxxHbXQHylhAIipS+nf93NjPGRFC6U+LE/lPiBxlHTa19/I5sjkLw5vPZ8SSu8pUZH5zrwjLSdriEgjVS0wl/ZhGC1nAZGaCngR1hqfA9RlsMQdldDdKkESVf3Ys2NHKy7mWFzdg0nTHJXG0b8iBHgd44O3kYQeQuBZB8CyOv07qW7R1qGgUO40UVDZW3wb2xCkFoBnqYe81vPYpHuQywxvIflpqMQdL2NxEsFWHNjB17qewupn2/B+i82n3a2Ubj0MOIuRoBD6+8r+J//HPPOXMOfTpow910T/vSuHk+dteCZemrtUd0bG0iVHahGkFqOEI0E4S3UMfMBIo1/A99cixjrAYgv52PNjSys7c3E+lubkfZF2uDG2y/dO9VhkgFbmOQuQokfwSPuIPDcV3jiiBlz9inhnkPCfbccM/MaMStPgVl7FZi9R4rZuyV4rFiGJ0604ql63X04qnzkLfBTqBGkkoPb1ICwlrNYoP0Qz3e8i2XGw4i1liPp8i4kX9mJlOtb8crNV5F2Kw2vfZFiHcaFS35KD5cMgOpgSP0deB3uAiuLBHunEpw8Ddz3tWBmQRtm7m/HrCIdZhe3Y3aRFnOKWjCnUA2PfXJ47JHgiRPNeJoYgc6TtcFb1koDA5UKBKsbENb8KRZoTzuAdRBaiyDuycWLVzOw9vpmGri+72W8dmv14KYvVtq7GC4Z6KWAAWe+gXueGszsRrB2N4O9tx1uhXq4F3XCvcSEmaUWzCq3YHaFGbPLTZhTboRHuQEepW3wLNLAM1+OP5RI8eR5O9IO1MJXroF/YyNCms4jvPljLNK+hyW6I1hmOIAYSwnEPdkQ92yngam967G+dw1evZmETbcSTruES36OCJf8hIAz34KVrQIjRwNGXhtY+/RgF3TCbb8ZnGIL3Eu74F7WhZnlXZhVYcXsKivmVFnhUdUFjyozPCsM8CxphWdhIx4rJPDk+ZEu+sqpDpLgqs8houVfWNDyDyzR1WGFsQwCUz7iLLlItL6F1Zc2I+XKBmzoW4O0viSk9Yl6XeZLfq4LvXAXjGw1puc0g7FbB8ZeI5j5nWAVWsDeb4FbsRWcEis4Zd1wL+/GzIpuzKrswezKbsyp7oFHtR3qWWmEZ1kbPAuVeKxQgqcJLY30UygRpGwAV/UZIjSnsKDlFF7QHcRyQzmijIUQmnci0boNKVfSsObSK3j52mqsv5FIAQdd5n/6Xf/j1VZMy27G9J06zNhjBGOfCYx8M5iFFrD2d4Fd1DU+sqoHHhUWeLzdfdrzQPebnlWdWzxL297xLFD85HWsCd5SFXxlMgQoJOCpPkZ40wdYoDmBF9qrEakrh8C4C3GmTIjM6UiypmF1zzqkXktC6lUR0nqFcAn46GtMzWrFtJx2TNtlwPQ8E2bsM4NBVYHlPqQbhSy1DiM9MhoGH9/yn+dGHQh0PApVcz32Elfm1SvhK5MiWHEWPOWHCFO9j0WaaizRVmKFbiei9dsRb9oKkWkjxJb1WGVNwdqLiVh3OQ6pVwRwmXv0Blyz2jA114Bpu4yYlmfC9D1mzNjrQOaPgywygZ10aJDBL57rjBuKR4Fq7p9PEQiQnQFX8SFClacQrjqOxRSwpRiR2j3gt++AoONNJHSmQWxei2TLKqT0JGLdJSFSL/PhMqvIAtccPVxzDZi6sxPTdpvuQdLdpJAFo5CFJjDFtWBEFZ90RjnH/xRxMVD6TwTL3wev8QTmNx7AQvUBLNHsxrLWbES3pSNGtxHCjg00MMmchJTuOKy7GG0HsgsteDTHANdcI1x3dmLqLtMDkcxVx8DgF4MZW7XNGeSckA/++26Q9Di4smMIkdXRwEXq/TQwsjkL/NbNiGnfgLiOFIgNYiSbE5FsisWarii81B3Z7zIlS48pOQY8mmvEo7mdDmQnpo6H/Mt5MPhFYMZUgRV3cIszyDmBkqPiQPI4uGQtQmU1CFdU4FnlPjynzsXSpjfAb90EQdsGCNtXQdQhQrJJiFWdK/CieTnWWpcTLpOzDJiSbcSUHAr4AGSeAQxBKZiCCjCFNWAlHH7TGeScIMmhOi5RCS5RjXBZCRbIdmKxMgvPKbdgqXoj+K2vIKo1FbHalRC1x0Ksj0WSYQVWGSPxYueSCJdHdhgwOcs4gqShYyFNmP76OTCiSsAUvg1W/GGwREe0zqDRCWyo8QqSVA1wJWXgEYUII/MQIc3GQtlbeL5xI5YqX8EydSr4TasR25pAAxPaorGyIxJJ+qX2nwKP7DD0PyxyRvIxMGMqwYyvBSvhCFiJRwecUaMTVF9BBDWUg9tQDB6RjzByDyLIt/Cs7A0slr+GpY0pWKF+EdGaBBpI4URty7CyY1nv8CCPbDdYKeAQcjKFzL4X6epAzuDvB1N4AKyEOrBERykg9Vl3j2pUgurLrcENJeA2FCBUkov5xDYslL6JRbLNDuBaLFclg69OgEATi9hmPuJbl1tF2qUjV61JmYa6SdvtQDvSMCZyamYzGFGlYMbVUFMLlugYWInHKOAAS3RkzGt68IUCL+6FfBuvYTdCJTkIk+zAQvJ1LCLTsFiaikhFMiIVKxGljoOgKWYgRhOd7zyGy6RMvdekTAMehJz6VyUY0WVgxh10dG8YSIFHpmSM8Op3RIQ2ZJ6eL0nXLiA22RaTL9sWS1+yvSBPtkUqRNoVSuH9sNGZlKnvnQhJrUvXrUowBGX29Xc/EOyEupEL5u+eDH36pEw9hpEOKI10bJ5Ht2moJ8dEQLATDvez4w/9trcF4yZDb7Mj9eMiZ6zIH2+Kh4Bgxx8aZMfXEuy42jHX5URx55dEuPOLx/kHM/TpLhkO4DjIaeK6sTaJMxDs+Fqw42oH2XEHtW7CmgnfanGiy704UWX5nKjSXnd+Cdz5xYPOfzOSDL12IqTrxgtgCsqdj5nxgGDHHYSbsAZusW/DLfaAzS2m2uYWU6XlCCqtHEGFjRNd3s+JLgcnqgycqFI4gBMe/hSyn0K6jIGcsl1nPwtHDupfAoRbTDXcYqrAEVSCI6gAjbsX2O/OL37A0sjQe7lk6AfGQ7puOEsfN45H3XD9DsBBd/7DvkDK0IsnQk4X1dpvMwmH7Z0UUbjfBBzkRJWKnRkTx97Je6c7046cnKnDNGGVHUl1cgj364D9nKiyh+zcWHFsnNFIqps0MrbSMd21dliCA/fwQC21i52/8pfHfgTZRnb4yFPH9eWPwFieD3ZMFQ0agtmrBm5CB+5eoI0jqJjw+Pl1sUN7nZGTt7Vgesr7YMZWgMUvAiu6zA6OqYSboBLsqDKwEg5SwF63mKr/A8w5GdQFQ183KdNgnbTd0D/6rJySoYXrVhVmvH4BzE3nMGfzpz/8cWv9Nc/08wudh3mY/A8MVyNGZunCmQAAAABJRU5ErkJggg==" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="c765de5c82ba2160a0068536c5a9efc3.jpg" Selector="&lt;html app='msedge.exe' title='React App' /&gt;" Title="React App" Version="V1">
-                <uix:TargetApp.Url>
-                  <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_Config["OpenBrowserUrl"].ToString()</CSharpValue>
-                  </InArgument>
-                </uix:TargetApp.Url>
-              </uix:TargetApp>
-            </uix:NApplicationCard.TargetApp>
-          </uix:NApplicationCard>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: React App" sap:VirtualizedContainerService.HintSize="619.2,1725.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" ScopeGuid="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="516.8,1476.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap:VirtualizedContainerService.HintSize="483.2,1415.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1328.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="OutArgument" Name="appWindow" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into ''Username''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Text="admin" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvElementArea="769, 598, 379, 51" CvType="InputBox" DesignTimeRectangle="772, 600, 375, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl class='form-control' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl class='form-control' tag='INPUT' type='text' placeholder='Enter your username' aaname='' /&gt;" Guid="c560eedb-a039-4a31-9403-0563705f068d" InformativeScreenshot="c602340d6faf69394af9b3c94bbe8567.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvTextArea="770, 567, 90, 17" CvTextArgument="Username" CvType="Text" DesignTimeRectangle="772, 560, 89, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='form-label' aaname='Username' check:innerText='Username' /&gt;" Guid="2eb25393-d2d4-43ab-870b-f33bbf8da226" SearchSteps="FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.VerifyOptions>
+                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    </uix:VerifyExecutionTypeIntoOptions>
+                  </uix:NTypeInto.VerifyOptions>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into ''Password''" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Text="password" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvElementArea="771, 708, 377, 47" CvType="InputBox" DesignTimeRectangle="772, 707, 375, 47" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' placeholder='Enter your password' aaname='' /&gt;" Guid="99d9e5a3-f7f4-4402-aefa-80105360eb9d" InformativeScreenshot="aae06b899f8f89e3d90eaacfdf56045b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvTextArea="771, 674, 68, 18" CvTextArgument="Passwor" CvType="Text" DesignTimeRectangle="772, 667, 82, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='form-label' check:innerText='Password' /&gt;" Guid="61af73c1-8e11-4e83-a1dd-8947b9aadfa5" SearchSteps="FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.VerifyOptions>
+                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    </uix:VerifyExecutionTypeIntoOptions>
+                  </uix:NTypeInto.VerifyOptions>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Login''" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="3706c69e-5d52-446d-8594-847854c752e1" CvElementArea="769, 773, 381, 51" CvTextArea="934, 789, 51, 25" CvTextArgument="Login" CvType="Button" DesignTimeRectangle="772, 774, 375, 47" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary w-100' aaname='Login' check:innerText='Login' /&gt;" Guid="b94456cc-ca2a-415f-91f4-af0d8b0b47d0" InformativeScreenshot="3726131962c43c264bc64b580cdbf9f6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Customers''" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost/plan-management" DesignTimeRectangle="72, 364, 93, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Customers' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Customers' tag='A' type='' class='text-white text-decoration-none' check:innerText='Customers' /&gt;" Guid="c33b44ef-f9f1-414c-867f-dd1e681ea282" InformativeScreenshot="3f2bb7d268511ac5efa1d8958ffa1bab.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Add Customer''" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="28c5414c-23a7-4c81-ab1e-efcbd7cbc6d8" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost/customers" DesignTimeRectangle="1676, 197, 165, 43" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl class='nav-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='nav-button' tag='BUTTON' type='' aaname='Add Customer' check:innerText='Add Customer' /&gt;" Guid="4d87d7e9-68ac-4550-88a0-5bac87a2896b" InformativeScreenshot="84caaf905d6f1a57ea599916c9a3035d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+              </Sequence>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OutUiElement>
+        <OutArgument x:TypeArguments="ui:UiElement">
+          <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">appWindow</CSharpReference>
+        </OutArgument>
+      </uix:NApplicationCard.OutUiElement>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Edge" IconBase64="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" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="c765de5c82ba2160a0068536c5a9efc3.jpg" Selector="&lt;html app='msedge.exe' title='React App' /&gt;" Title="React App" Version="V1">
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_Config["OpenBrowserUrl"].ToString()</CSharpValue>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
     <Assign sap:VirtualizedContainerService.HintSize="619.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:UiElement">

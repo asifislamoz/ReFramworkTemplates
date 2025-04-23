@@ -98,7 +98,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetTransactionFromDb" sap:VirtualizedContainerService.HintSize="1172,1488.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetTransactionFromDb" sap:VirtualizedContainerService.HintSize="1145.6000000000001,1488.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Transactions" />
     </Sequence.Variables>
@@ -139,12 +139,15 @@
               </ui:ExecuteQuery.Parameters>
               <ui:ExecuteQuery.Sql>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19" xml:space="preserve">@"
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21" xml:space="preserve">@"
 SELECT TOP 1
     cs.CustomerId,
     cs.TransactionId,
     cs.FirstName,
+    cs.LastName,
     cs.Email,
+    cs.Address,
+	cs.PhoneNumber,
     ms.MigrationStatus,
     ms.UpdatedDate
 FROM Customers_Source cs
