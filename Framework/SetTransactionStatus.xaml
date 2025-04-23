@@ -122,7 +122,7 @@
           <av:Point x:Key="ShapeLocation">260,100</av:Point>
           <av:Size x:Key="ShapeSize">60,60</av:Size>
           <av:PointCollection x:Key="FalseConnector">320,130 420,130 420,200</av:PointCollection>
-          <av:PointCollection x:Key="TrueConnector">260,130 230,130 230,210.2 135.4,210.2</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">260,130 165.4,130 165.4,210.2 135.4,210.2</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
@@ -173,6 +173,7 @@
                             <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">in_TransactionID</CSharpValue>
                             </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_OperationType">Update</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -352,6 +353,7 @@
                                 <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
                                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">in_TransactionID</CSharpValue>
                                 </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_OperationType">Update</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                           </Sequence>
@@ -455,6 +457,7 @@
                                 <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
                                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">in_TransactionID</CSharpValue>
                                 </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_OperationType">Update</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                           </Sequence>
