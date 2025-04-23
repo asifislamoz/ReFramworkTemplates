@@ -1,0 +1,112 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&"
+      ],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&56f5257d-6bc2-4c8a-ab49-2d05d3d7c755",
+        "SystemException&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "appWindow&StateMachine_1",
+        "DBConnection&StateMachine_1",
+        "CustomerId&StateMachine_1",
+        "ShouldStop&Sequence_5",
+        "variable1&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&bbcb42a9-e2c8-4d40-a9c4-b83228d7c26f"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/DatabaseOperations.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&bbcb42a9-e2c8-4d40-a9c4-b83228d7c26f"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_QueueItem",
+        "in_TransactionData",
+        "in_Status",
+        "in_ErrorMessage",
+        "in_Config",
+        "out_Result",
+        "argument1"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&56f5257d-6bc2-4c8a-ab49-2d05d3d7c755"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&56f5257d-6bc2-4c8a-ab49-2d05d3d7c755",
+        "CustomerId&Sequence_2",
+        "TransactionId&Sequence_2",
+        "FirstName&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config",
+        "in_appWindow",
+        "in_TransactionNumber",
+        "out_CustomerId",
+        "out_TransactionId"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

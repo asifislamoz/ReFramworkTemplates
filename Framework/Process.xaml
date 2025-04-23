@@ -6,6 +6,7 @@
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="out_CustomerId" Type="OutArgument(x:Int32)" />
     <x:Property Name="out_TransactionId" Type="OutArgument(x:String)" />
+    <x:Property Name="CorrelationId" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1157,657</sap:VirtualizedContainerService.HintSize>
@@ -110,9 +111,10 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1172,2828" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="892.0000000000001,2861.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="CustomerId" />
       <Variable x:TypeArguments="x:String" Name="TransactionId" />
@@ -124,20 +126,29 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="552,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
-      <ui:LogMessage.Message>
-        <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"Started Process"</CSharpValue>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log Mssage - Process Start" sap:VirtualizedContainerService.HintSize="534.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\\CustomLogMessages.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Started Process</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogLevel">Info</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">TransactionId</CSharpValue>
         </InArgument>
-      </ui:LogMessage.Message>
-    </ui:LogMessage>
-    <Sequence DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="552,1005.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">CorrelationId</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">in_Config</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Sequence DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="534.4,1037.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">
             <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">CustomerId</CSharpReference>
@@ -149,7 +160,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <If sap:VirtualizedContainerService.HintSize="468.8,468" sap2010:WorkflowViewState.IdRef="If_1">
+      <If sap:VirtualizedContainerService.HintSize="500.8,500" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Condition>
           <InArgument x:TypeArguments="x:Boolean">
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">!String.IsNullOrWhiteSpace(in_TransactionItem["TransactionId"].ToString())</CSharpValue>
@@ -198,7 +209,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">
             <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">out_CustomerId</CSharpReference>
@@ -210,7 +221,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">out_TransactionId</CSharpReference>
@@ -222,7 +233,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">FirstName</CSharpReference>
@@ -235,28 +246,28 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="552,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,1460.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="534.4,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="534.4,1460.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="516.8,1359.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,1359.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="483.2,1299.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="449.6,1299.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1139.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1139.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="fb17a87e-2cfc-489f-9006-5c1a4271a581" ContentHash="KKVOGbm_CUKtfPdhi8aH0A" CvElementArea="393, 311, 1441, 61" CvType="InputBox" DesignTimeRectangle="397, 313, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='' aaname='First Name' /&gt;" Guid="0ff2718a-5b9b-499c-8766-25e4b2fd17eb" InformativeScreenshot="dcb95bd7e24c05262edc09d6341d47dc.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/V-K-H_xXTUib7cLRQVIgbw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -282,7 +293,7 @@
                       </uix:VerifyExecutionTypeIntoOptions>
                     </uix:NTypeInto.VerifyOptions>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" ContentHash="znAMfqVkSkebB3akeoUDog" CvElementArea="392, 404, 1443, 61" CvType="InputBox" DesignTimeRectangle="397, 406, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='' aaname='Last Name' /&gt;" Guid="6c5b95a6-a54b-4434-80c0-e05b3c991c7e" InformativeScreenshot="10fb2dc5f68615f1538c68deb87cac7d.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/Dq2blPEDYkGRXr1C2ybMFQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -308,7 +319,7 @@
                       </uix:VerifyExecutionTypeIntoOptions>
                     </uix:NTypeInto.VerifyOptions>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="a233d4f6-549f-426b-8f7d-a7ebff67c5b9" ContentHash="hjcPfPG_-kuEMPzmS-apJQ" CvElementArea="391, 496, 1445, 61" CvType="InputBox" DesignTimeRectangle="397, 499, 1438, 57" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='email' class='' aaname='Email' /&gt;" Guid="917406bf-8832-4853-bdf1-cd71bbc3ec50" InformativeScreenshot="8d0145709a7e0824d1c969d635554a84.png" IsResponsive="True" Reference="3GePU76oyEypRLuIiaq_hw/mZ7gm4UF6UakUItxwvn6pw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -334,7 +345,7 @@
                       </uix:VerifyExecutionTypeIntoOptions>
                     </uix:NTypeInto.VerifyOptions>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create Customer'" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create Customer'" sap:VirtualizedContainerService.HintSize="382.4,218.4" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7552bc7b-3ead-4075-b478-0e52a998163d" Version="V4">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/customers/create" CVScreenId="e8e4fff5-57e6-4682-8de0-7069c7a701aa" ContentHash="7V9im0LPHkq0spbKEP9v-A" CvElementArea="395, 742, 212, 63" CvTextArea="424, 765, 150, 18" CvTextArgument="Create Customer" CvType="Button" DesignTimeRectangle="397, 743, 208, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='submit-button' aaname='Create Customer' check:innerText='Create Customer' /&gt;" Guid="7a176cfa-f859-467f-9b7f-cc65cea02d6d" InformativeScreenshot="36cc10195ed19673b51c11c66101f6e3.png" Reference="3GePU76oyEypRLuIiaq_hw/iK_KdrhFW0GRb1VJOYhciA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                     </uix:NClick.Target>
