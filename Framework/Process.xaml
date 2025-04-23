@@ -6,6 +6,7 @@
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="out_CustomerId" Type="OutArgument(x:Int32)" />
     <x:Property Name="out_TransactionId" Type="OutArgument(x:String)" />
+    <x:Property Name="CorrelationId" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1157,657</sap:VirtualizedContainerService.HintSize>
@@ -110,6 +111,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1145.6000000000001,3239.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -124,20 +126,29 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="502.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
-      <ui:LogMessage.Message>
-        <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"Started Process"</CSharpValue>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log Mssage - Process Start" sap:VirtualizedContainerService.HintSize="534.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\\CustomLogMessages.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">Started Process</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogLevel">Info</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">TransactionId</CSharpValue>
         </InArgument>
-      </ui:LogMessage.Message>
-    </ui:LogMessage>
-    <Sequence DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="502.4,1005.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">CorrelationId</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">in_Config</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Sequence DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="534.4,1037.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">
             <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">CustomerId</CSharpReference>
@@ -149,7 +160,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <If sap:VirtualizedContainerService.HintSize="468.8,468" sap2010:WorkflowViewState.IdRef="If_1">
+      <If sap:VirtualizedContainerService.HintSize="500.8,500" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Condition>
           <InArgument x:TypeArguments="x:Boolean">
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">!String.IsNullOrWhiteSpace(in_TransactionItem["TransactionId"].ToString())</CSharpValue>
@@ -198,7 +209,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">
             <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">out_CustomerId</CSharpReference>
@@ -210,7 +221,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">out_TransactionId</CSharpReference>
@@ -222,7 +233,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="468.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap:VirtualizedContainerService.HintSize="500.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">FirstName</CSharpReference>
