@@ -1,0 +1,15 @@
+{
+  "Value": {
+    "Framework/InitAllApplications.xaml": [
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "ae8331f8-5a5a-4e9d-9f4a-299d8012858b",
+        "ActivityIdRef": "NApplicationCard_8",
+        "ActivityId": "1.32",
+        "ActivityName": "Use Browser Edge: React App",
+        "IsTransient": false
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_CorrelationId" Type="InArgument(x:String)" />
@@ -35,6 +35,9 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -90,10 +93,12 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="892.0000000000001,1137.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="1145.6000000000001,1434.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -111,30 +116,36 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
           <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Config</CSharpValue>
         </InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CloseDatabaseConnection - Invoke Workflow File (Framework\\CloseDatabaseConnection.xaml)" sap:VirtualizedContainerService.HintSize="552,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\\CloseDatabaseConnection.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">
+          <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">Config</CSharpReference>
+        </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518.4,907.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,916" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,805.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="516.8,805.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: React App" sap:VirtualizedContainerService.HintSize="449.6,745.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="7349da07-3cd4-4c43-b243-88d818f83ee6" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: React App" sap:VirtualizedContainerService.HintSize="483.2,745.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="7349da07-3cd4-4c43-b243-88d818f83ee6" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,505.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,505.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Logout''" sap:VirtualizedContainerService.HintSize="382.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7349da07-3cd4-4c43-b243-88d818f83ee6" Version="V4">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Logout''" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7349da07-3cd4-4c43-b243-88d818f83ee6" Version="V4">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/login" CVScreenId="84621c3c-152f-4f76-a27b-ed07390e21c2" CvElementArea="1772, 109, 100, 51" CvTextArea="1790, 127, 65, 22" CvTextArgument="Logout" CvType="Button" DesignTimeRectangle="1775, 111, 95, 47" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Logout' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Logout' tag='BUTTON' type='' class='btn btn-danger' check:innerText='Logout' /&gt;" Guid="0272f695-d400-48e8-bec9-5586dbfba53d" InformativeScreenshot="5fa226a210ef3285f97c72b67e4736c1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='React App' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -149,7 +160,7 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Close tab''" sap:VirtualizedContainerService.HintSize="382.4,218.4" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7349da07-3cd4-4c43-b243-88d818f83ee6" Version="V4">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ''Close tab''" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7349da07-3cd4-4c43-b243-88d818f83ee6" Version="V4">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="" CVScreenId="11224ce3-221a-415a-8eeb-46ab562960d4" CvElementArea="471, 10, 303, 44" CvType="Button" DesignTimeRectangle="741, 20, 22, 22" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;ctrl name='React App - Microsoft Edge' role='pane' /&gt;&lt;ctrl idx='2' name='Tab bar' role='page tab list' /&gt;&lt;ctrl name='React App' role='page tab' /&gt;&lt;ctrl name='Close tab' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='React App - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Tab bar' role='page tab list' /&gt;&lt;ctrl name='React App' role='page tab' /&gt;&lt;ctrl name='Close tab' role='push button' automationid='' check:text='Close tab' /&gt;" Guid="7404b776-3baf-40e3-a04d-f50d5dacde0f" InformativeScreenshot="65af4199825da54434b6abedafaddce3.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='React App and 1 more page - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -185,5 +196,195 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
+    <Sequence DisplayName="Close Database Connection" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If sap:VirtualizedContainerService.HintSize="504,980.8" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">Config.ContainsKey("DbConnection") &amp;&amp; Config["DbConnection"] != null</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502.4,761.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="468.8,701.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="467.2,221.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DatabaseDisconnect DisplayName="Disconnect from Database" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1">
+                    <ui:DatabaseDisconnect.DatabaseConnection>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection">
+                        <CSharpValue x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">(UiPath.Database.DatabaseConnection)Config["DbConnection"]</CSharpValue>
+                      </InArgument>
+                    </ui:DatabaseDisconnect.DatabaseConnection>
+                  </ui:DatabaseDisconnect>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">
+                        <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">Config["DbConnection"]</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">null</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,225.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn">
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"Failed to close database connection: " + exception.Message</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Close Database Connection" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If sap:VirtualizedContainerService.HintSize="504,980.8" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Config.ContainsKey("DbConnection") &amp;&amp; Config["DbConnection"] != null</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502.4,761.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="468.8,701.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="467.2,221.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DatabaseDisconnect DisplayName="Disconnect from Database" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2">
+                    <ui:DatabaseDisconnect.DatabaseConnection>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection">
+                        <CSharpValue x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">(UiPath.Database.DatabaseConnection)Config["DbConnection"]</CSharpValue>
+                      </InArgument>
+                    </ui:DatabaseDisconnect.DatabaseConnection>
+                  </ui:DatabaseDisconnect>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">
+                        <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Config["DbConnection"]</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">null</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,225.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn">
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Failed to close database connection: " + exception.Message</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
   </Sequence>
 </Activity>
