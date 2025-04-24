@@ -1,35 +1,345 @@
-﻿[2025-04-23T23:07:32.568Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Running Environment:DEV
-[2025-04-23T23:07:35.855Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Opening applications...
-[2025-04-23T23:07:37.764Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN001
-[2025-04-23T23:07:40.466Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN002
-[2025-04-23T23:07:41.723Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN003
-[2025-04-23T23:07:42.756Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN004
-[2025-04-23T23:07:45.575Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN005
-[2025-04-23T23:07:47.579Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN006
-[2025-04-23T23:07:48.496Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN007
-[2025-04-23T23:07:49.329Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN008
-[2025-04-23T23:07:50.244Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN009
-[2025-04-23T23:07:51.055Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Inserted status New for TransactionId: TXN010
-[2025-04-23T23:07:51.862Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:07:52.669Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: ] Updated status to Completed for TransactionId: TXN001
-[2025-04-23T23:07:53.405Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:07:54.348Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: ] Updated status to Completed for TransactionId: TXN002
-[2025-04-23T23:07:56.201Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:07:57.453Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: ] Updated status to Completed for TransactionId: TXN003
-[2025-04-23T23:08:00.101Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:01.233Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: ] Updated status to Completed for TransactionId: TXN004
-[2025-04-23T23:08:02.993Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:03.842Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: ] Updated status to Completed for TransactionId: TXN005
-[2025-04-23T23:08:04.581Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:05.417Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: ] Updated status to Completed for TransactionId: TXN006
-[2025-04-23T23:08:06.154Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:06.947Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: ] Updated status to Completed for TransactionId: TXN007
-[2025-04-23T23:08:07.693Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:08.470Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: ] Updated status to Completed for TransactionId: TXN008
-[2025-04-23T23:08:09.221Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:11.100Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: ] Updated status to Completed for TransactionId: TXN009
-[2025-04-23T23:08:14.396Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Started Process
-[2025-04-23T23:08:15.328Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: ] Updated status to Completed for TransactionId: TXN010
-[2025-04-23T23:08:16.187Z] [Warn] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Applications failed to close gracefully. The values provided for the root activity's arguments did not satisfy the root activity's requirements:
+﻿[2025-04-24T14:53:10.328Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Running Environment:DEV
+[2025-04-24T14:53:13.528Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Opening applications...
+[2025-04-24T14:54:59.984Z] [Error] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] System.Exception: Database connection failed: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Activities.Statements.Throw.Execute(CodeActivityContext context)
+   at System.Activities.CodeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+   at System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+--- End of stack trace from previous location ---
+   at UiPath.Executor.BaseRunner.EndExecute(IAsyncResult result)
+   at UiPath.Executor.InProcessRunner.EndExecute(IAsyncResult result)
+   at UiPath.Core.Activities.ExecutorInvokeActivity.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+[2025-04-24T14:55:08.234Z] [Info] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Screenshot saved at: Data\Screenshots\ExceptionScreenshot_250424.025508.png
+[2025-04-24T14:57:21.735Z] [Error] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at UiPath.Database.DatabaseConnection.OpenConnection()
+   at UiPath.Database.DatabaseConnection.Initialize(String connectionString, String providerName)
+   at UiPath.Database.DBConnectionFactory.Create(String connectionString, String providerName)
+   at UiPath.Database.Activities.DatabaseConnect.<>c__DisplayClass19_0.<ExecuteAsync>b__1()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at UiPath.Database.Activities.DatabaseConnect.ExecuteAsync(AsyncCodeActivityContext context, CancellationToken cancellationToken)
+   at UiPath.Database.Activities.AsyncTaskCodeActivity.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+--- End of stack trace from previous location ---
+   at UiPath.Executor.BaseRunner.EndExecute(IAsyncResult result)
+   at UiPath.Executor.InProcessRunner.EndExecute(IAsyncResult result)
+   at UiPath.Core.Activities.ExecutorInvokeActivity.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+[2025-04-24T14:57:25.735Z] [Fatal] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Error getting transaction data for Transaction Number: 1. The given key 'DbConnection' was not present in the dictionary. at Source: System.Private.CoreLib
+[2025-04-24T14:57:26.891Z] [Warn] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Applications failed to close gracefully. The values provided for the root activity's arguments did not satisfy the root activity's requirements:
 'CloseAllApplications': The following keys from the input dictionary do not map to arguments and must be removed: in_CorrelationId.  Please note that argument names are case sensitive. (Parameter 'rootArgumentValues') at Source: System.Activities
-[2025-04-23T23:08:17.018Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f880d17-30e3-4084-9d3e-9039dc0a54f7] Killing processes...
+[2025-04-24T14:57:27.745Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_92f39aaa-67b5-4d49-b772-5dda850b4ee4] Killing processes...
+[2025-04-24T15:40:33.569Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_646d8e13-b22f-46e5-926e-5fc92e08412b] Running Environment:DEV
+[2025-04-24T15:40:37.734Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_646d8e13-b22f-46e5-926e-5fc92e08412b] Opening applications...
+[2025-04-24T15:40:42.601Z] [Warn] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_646d8e13-b22f-46e5-926e-5fc92e08412b] Applications failed to close gracefully. The values provided for the root activity's arguments did not satisfy the root activity's requirements:
+'CloseAllApplications': The following keys from the input dictionary do not map to arguments and must be removed: in_CorrelationId.  Please note that argument names are case sensitive. (Parameter 'rootArgumentValues') at Source: System.Activities
+[2025-04-24T15:40:44.545Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_646d8e13-b22f-46e5-926e-5fc92e08412b] Killing processes...
+[2025-04-24T16:48:02.770Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_53dad769-ccb7-44c9-87e6-c946c2887313] Running Environment:DEV
+[2025-04-24T16:48:05.580Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_53dad769-ccb7-44c9-87e6-c946c2887313] Opening applications...
+[2025-04-24T16:53:36.061Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_7f052cb0-4de5-4fbc-a49a-cba9e8a336d8] Running Environment:DEV
+[2025-04-24T16:53:38.494Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_7f052cb0-4de5-4fbc-a49a-cba9e8a336d8] Opening applications...
+[2025-04-24T16:55:23.627Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Running Environment:DEV
+[2025-04-24T16:55:26.471Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Opening applications...
+[2025-04-24T16:55:30.323Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN001
+[2025-04-24T16:55:33.162Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN002
+[2025-04-24T16:55:36.613Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN003
+[2025-04-24T16:55:39.677Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN004
+[2025-04-24T16:55:42.697Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN005
+[2025-04-24T16:55:45.528Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN006
+[2025-04-24T16:55:48.538Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN007
+[2025-04-24T16:55:51.227Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN008
+[2025-04-24T16:55:53.178Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN009
+[2025-04-24T16:55:55.910Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Inserted status New for TransactionId: TXN010
+[2025-04-24T16:55:58.642Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:01.699Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:05.975Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:09.598Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:12.356Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:15.043Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:17.804Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:20.748Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:23.624Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:26.293Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:28.917Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:31.697Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:34.359Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:37.012Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:39.678Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:42.339Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:44.984Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:47.677Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:50.359Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:51.513Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:52.570Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:53.666Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:54.770Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:56:56.153Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:56:58.804Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:57:01.490Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:57:04.181Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:57:05.345Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:57:06.566Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] Started Process
+[2025-04-24T16:57:07.883Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_a54ff836-c2c0-45fc-bd93-d7c2178f5a03] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T16:59:34.852Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ee805c20-6bf9-47dc-b6ca-bdf094692636] Running Environment:DEV
+[2025-04-24T16:59:38.177Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ee805c20-6bf9-47dc-b6ca-bdf094692636] Opening applications...
+[2025-04-24T16:59:46.054Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_ee805c20-6bf9-47dc-b6ca-bdf094692636] Started Process
+[2025-04-24T17:06:58.752Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_6c3ed9ba-46ff-43ee-9af4-795c807025eb] Running Environment:DEV
+[2025-04-24T17:07:05.032Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_6c3ed9ba-46ff-43ee-9af4-795c807025eb] Opening applications...
+[2025-04-24T17:07:18.234Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_6c3ed9ba-46ff-43ee-9af4-795c807025eb] Inserted status New for TransactionId: TXN001
+[2025-04-24T17:07:26.731Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_6c3ed9ba-46ff-43ee-9af4-795c807025eb] Inserted status New for TransactionId: TXN002
+[2025-04-24T17:07:34.673Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_6c3ed9ba-46ff-43ee-9af4-795c807025eb] Inserted status New for TransactionId: TXN003
+[2025-04-24T17:13:26.415Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Running Environment:DEV
+[2025-04-24T17:13:29.601Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Opening applications...
+[2025-04-24T17:13:33.584Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Inserted status New for TransactionId: TXN005
+[2025-04-24T17:13:36.608Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Inserted status New for TransactionId: TXN006
+[2025-04-24T17:13:42.072Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Inserted status New for TransactionId: TXN007
+[2025-04-24T17:13:45.758Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Inserted status New for TransactionId: TXN008
+[2025-04-24T17:13:49.050Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Inserted status New for TransactionId: TXN009
+[2025-04-24T17:13:50.506Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Inserted status New for TransactionId: TXN010
+[2025-04-24T17:13:51.685Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:13:53.043Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN001
+[2025-04-24T17:13:54.212Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:13:55.600Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN002
+[2025-04-24T17:13:56.729Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:13:59.506Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN003
+[2025-04-24T17:14:02.815Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:05.089Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN004
+[2025-04-24T17:14:06.317Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:07.491Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN005
+[2025-04-24T17:14:08.565Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:11.242Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN006
+[2025-04-24T17:14:13.848Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:16.546Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN007
+[2025-04-24T17:14:19.194Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:21.908Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN008
+[2025-04-24T17:14:25.660Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:28.286Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN009
+[2025-04-24T17:14:31.127Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Started Process
+[2025-04-24T17:14:33.826Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_68e4309e-c0b2-49d4-b1c7-515c3a624783] Updated status to Completed for TransactionId: TXN010
+[2025-04-24T17:34:55.177Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Running Environment:DEV
+[2025-04-24T17:34:57.557Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Opening applications...
+[2025-04-24T17:35:08.527Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN001
+[2025-04-24T17:35:17.609Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN002
+[2025-04-24T17:35:20.424Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN003
+[2025-04-24T17:35:21.595Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN004
+[2025-04-24T17:35:22.821Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN005
+[2025-04-24T17:35:23.939Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN006
+[2025-04-24T17:35:26.636Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN007
+[2025-04-24T17:35:29.518Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN008
+[2025-04-24T17:35:32.563Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN009
+[2025-04-24T17:35:35.364Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Inserted status New for TransactionId: TXN010
+[2025-04-24T17:35:38.179Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Started Process
+[2025-04-24T17:38:53.369Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:38:56.097Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Started Process
+[2025-04-24T17:40:01.776Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:40:04.489Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Started Process
+[2025-04-24T17:43:28.324Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:43:45.860Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Started Process
+[2025-04-24T17:48:52.508Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:48:55.352Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_44434adf-ba09-4e23-9841-333c7f9cd5d2] Started Process
+[2025-04-24T17:51:20.152Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Running Environment:DEV
+[2025-04-24T17:51:22.975Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Opening applications...
+[2025-04-24T17:51:26.304Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:51:29.089Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:51:31.798Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:51:34.462Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:51:37.285Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:51:39.937Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:51:42.585Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:51:45.189Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:51:47.820Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:51:49.940Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:51:52.538Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:51:55.157Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:51:58.479Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:01.094Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:03.853Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:06.462Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:09.062Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:11.718Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:14.306Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:16.939Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:19.700Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:22.333Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:24.940Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:27.590Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:30.207Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:32.868Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:35.529Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:38.175Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:41.078Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:43.707Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:52:46.478Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] Started Process
+[2025-04-24T17:52:49.123Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_31100bf6-6834-4d0e-8feb-6f680a840de5] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:57:54.346Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Running Environment:DEV
+[2025-04-24T17:57:57.143Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Opening applications...
+[2025-04-24T17:58:00.939Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Started Process
+[2025-04-24T17:58:05.194Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:58:07.951Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Started Process
+[2025-04-24T17:58:10.626Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:58:13.201Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Started Process
+[2025-04-24T17:58:15.865Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:58:18.508Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Started Process
+[2025-04-24T17:58:21.208Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T17:58:24.049Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_1d97baf8-949d-42ea-ac97-626a38f553a4] Started Process
+[2025-04-24T17:59:46.326Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_6c11bb50-f9de-42e6-bea3-4696986e374e] Running Environment:DEV
+[2025-04-24T17:59:49.218Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_6c11bb50-f9de-42e6-bea3-4696986e374e] Opening applications...
+[2025-04-24T17:59:52.238Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_6c11bb50-f9de-42e6-bea3-4696986e374e] Started Process
+[2025-04-24T17:59:55.046Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_6c11bb50-f9de-42e6-bea3-4696986e374e] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T18:00:01.766Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_6c11bb50-f9de-42e6-bea3-4696986e374e] SetTransactionStatus.xaml failed: Object reference not set to an instance of an object. at Source: Retry Set Transaction Status (System Exception): Check Database Connection 
+[2025-04-24T18:00:45.830Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_21f5529d-94e2-4fc8-a41d-d648d94f5b1c] Running Environment:DEV
+[2025-04-24T18:00:48.720Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_21f5529d-94e2-4fc8-a41d-d648d94f5b1c] Opening applications...
+[2025-04-24T18:00:52.270Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_21f5529d-94e2-4fc8-a41d-d648d94f5b1c] Started Process
+[2025-04-24T18:01:44.554Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_21f5529d-94e2-4fc8-a41d-d648d94f5b1c] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T18:02:57.534Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_21f5529d-94e2-4fc8-a41d-d648d94f5b1c] SetTransactionStatus.xaml failed: Object reference not set to an instance of an object. at Source: Retry Set Transaction Status (System Exception): Check Database Connection 
+[2025-04-24T18:05:53.946Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_42f57ff8-9aa6-4417-97ab-0bea6ceffef4] Running Environment:DEV
+[2025-04-24T18:05:56.840Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_42f57ff8-9aa6-4417-97ab-0bea6ceffef4] Opening applications...
+[2025-04-24T18:06:00.463Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_42f57ff8-9aa6-4417-97ab-0bea6ceffef4] Started Process
+[2025-04-24T18:07:27.123Z] [Fatal] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_42f57ff8-9aa6-4417-97ab-0bea6ceffef4] SetTransactionStatus.xaml failed: Status update failed for TransactionId: TXN001: Must declare the scalar variable "@TransactionId". at Source: UpdateMigrationStatus - Invoke Workflow File (Framework\UpdateMigrationStatus.xaml): Throw
+[2025-04-24T18:17:24.919Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_e6cc8994-493f-48a1-8505-6dd637e3c796] Running Environment:DEV
+[2025-04-24T18:17:26.209Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_e6cc8994-493f-48a1-8505-6dd637e3c796] Opening applications...
+[2025-04-24T18:17:29.634Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_e6cc8994-493f-48a1-8505-6dd637e3c796] Started Process
+[2025-04-24T18:19:45.517Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_9dee50e7-e1bb-4a78-aaa1-4422f2143d9c] Running Environment:DEV
+[2025-04-24T18:19:56.853Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ed96f557-18d4-46cd-9b04-97549a98aa47] Running Environment:DEV
+[2025-04-24T18:19:59.925Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ed96f557-18d4-46cd-9b04-97549a98aa47] Opening applications...
+[2025-04-24T18:20:03.361Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_ed96f557-18d4-46cd-9b04-97549a98aa47] Started Process
+[2025-04-24T18:35:17.902Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Running Environment:DEV
+[2025-04-24T18:35:20.713Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Opening applications...
+[2025-04-24T18:35:24.329Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN001
+[2025-04-24T18:35:27.083Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN002
+[2025-04-24T18:35:29.828Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN003
+[2025-04-24T18:35:32.644Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN004
+[2025-04-24T18:35:35.493Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN005
+[2025-04-24T18:35:38.481Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN006
+[2025-04-24T18:35:39.837Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN007
+[2025-04-24T18:35:40.973Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN008
+[2025-04-24T18:35:43.882Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN009
+[2025-04-24T18:35:45.039Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Inserted status New for TransactionId: TXN010
+[2025-04-24T18:35:47.712Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:35:50.496Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN001
+[2025-04-24T18:35:51.681Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:35:52.789Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN002
+[2025-04-24T18:35:53.841Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:35:54.975Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN003
+[2025-04-24T18:35:57.617Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:00.314Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN004
+[2025-04-24T18:36:02.961Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:05.639Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN005
+[2025-04-24T18:36:08.528Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:11.135Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN006
+[2025-04-24T18:36:13.762Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:16.518Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN007
+[2025-04-24T18:36:19.139Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:21.719Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN008
+[2025-04-24T18:36:24.350Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:26.986Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN009
+[2025-04-24T18:36:30.340Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Started Process
+[2025-04-24T18:36:32.956Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_ec524a97-710d-46e6-bd00-7f641d1efbc7] Updated status to Completed for TransactionId: TXN010
+[2025-04-24T18:39:24.907Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Running Environment:DEV
+[2025-04-24T18:39:27.703Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Opening applications...
+[2025-04-24T18:39:31.223Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN001
+[2025-04-24T18:39:34.769Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN002
+[2025-04-24T18:39:37.431Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN003
+[2025-04-24T18:39:40.254Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN004
+[2025-04-24T18:39:43.060Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN005
+[2025-04-24T18:39:45.940Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN006
+[2025-04-24T18:39:47.365Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN007
+[2025-04-24T18:39:50.241Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN008
+[2025-04-24T18:39:52.980Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN009
+[2025-04-24T18:39:55.668Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Inserted status New for TransactionId: TXN010
+[2025-04-24T18:39:58.333Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:01.041Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN001
+[2025-04-24T18:40:03.685Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:06.554Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN002
+[2025-04-24T18:40:09.192Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:11.907Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN003
+[2025-04-24T18:40:14.536Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:17.183Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN004
+[2025-04-24T18:40:19.910Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:22.684Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN005
+[2025-04-24T18:40:25.318Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:28.171Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN006
+[2025-04-24T18:40:30.839Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:33.498Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN007
+[2025-04-24T18:40:36.400Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:39.059Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN008
+[2025-04-24T18:40:41.714Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:44.614Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN009
+[2025-04-24T18:40:47.280Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Started Process
+[2025-04-24T18:40:49.968Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_73ae419f-49a7-4505-a1f0-3e2e60eb976d] Updated status to Completed for TransactionId: TXN010
+[2025-04-24T18:41:32.290Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_0f9c627c-ad16-463f-a750-a5d2d6820e76] Running Environment:DEV
+[2025-04-24T18:41:35.290Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_0f9c627c-ad16-463f-a750-a5d2d6820e76] Opening applications...
+[2025-04-24T18:42:27.787Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_581dcc42-8ecd-4f95-9184-53478243cd74] Running Environment:DEV
+[2025-04-24T18:42:30.702Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_581dcc42-8ecd-4f95-9184-53478243cd74] Opening applications...
+[2025-04-24T18:45:12.727Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_9b54d601-d989-460d-8211-2c34a57b998d] Running Environment:DEV
+[2025-04-24T18:45:15.620Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_9b54d601-d989-460d-8211-2c34a57b998d] Opening applications...
+[2025-04-24T20:25:27.056Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ca4ac89a-8f3c-4256-b072-7ec2c1a7004f] Running Environment:DEV
+[2025-04-24T20:25:31.218Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_ca4ac89a-8f3c-4256-b072-7ec2c1a7004f] Opening applications...
+[2025-04-24T20:33:04.906Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_24feb2f2-2da9-4342-a605-460c98a6469a] Running Environment:DEV
+[2025-04-24T20:33:06.829Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_24feb2f2-2da9-4342-a605-460c98a6469a] Opening applications...
+[2025-04-24T20:36:31.182Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_b28a9004-7c82-48ec-8e51-77698b356bc9] Running Environment:DEV
+[2025-04-24T20:36:34.153Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_b28a9004-7c82-48ec-8e51-77698b356bc9] Opening applications...
+[2025-04-24T20:41:21.761Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_8546ae0f-2a80-4fe1-abe9-e0a4325fa7ee] Running Environment:DEV
+[2025-04-24T20:41:24.925Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_8546ae0f-2a80-4fe1-abe9-e0a4325fa7ee] Opening applications...
+[2025-04-24T20:44:50.405Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_73b94f1b-b232-483d-a813-0e0ae0ba715b] Running Environment:DEV
+[2025-04-24T20:44:52.824Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_73b94f1b-b232-483d-a813-0e0ae0ba715b] Opening applications...
+[2025-04-24T20:48:21.777Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_bf237d53-40e1-4409-9097-a093751ac246] Running Environment:DEV
+[2025-04-24T20:48:23.951Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_bf237d53-40e1-4409-9097-a093751ac246] Opening applications...
+[2025-04-24T21:54:55.664Z] [Information] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Running Environment:DEV
+[2025-04-24T21:54:58.963Z] [Trace] [Process: CustomerProcess] [TransactionId: ] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Opening applications...
+[2025-04-24T21:55:03.349Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN001
+[2025-04-24T21:55:04.998Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN002
+[2025-04-24T21:55:06.468Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN003
+[2025-04-24T21:55:09.315Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN004
+[2025-04-24T21:55:12.358Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN005
+[2025-04-24T21:55:15.221Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN006
+[2025-04-24T21:55:18.166Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN007
+[2025-04-24T21:55:20.993Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN008
+[2025-04-24T21:55:23.771Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN009
+[2025-04-24T21:55:26.831Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Inserted status New for TransactionId: TXN010
+[2025-04-24T21:55:29.750Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:55:32.958Z] [Info] [Process: CustomerProcess] [TransactionId: TXN001] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN001
+[2025-04-24T21:55:34.198Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:55:35.400Z] [Info] [Process: CustomerProcess] [TransactionId: TXN002] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN002
+[2025-04-24T21:55:38.185Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:55:40.899Z] [Info] [Process: CustomerProcess] [TransactionId: TXN003] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN003
+[2025-04-24T21:55:43.662Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:55:46.398Z] [Info] [Process: CustomerProcess] [TransactionId: TXN004] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN004
+[2025-04-24T21:55:49.123Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:55:52.043Z] [Info] [Process: CustomerProcess] [TransactionId: TXN005] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN005
+[2025-04-24T21:55:53.347Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:55:56.077Z] [Info] [Process: CustomerProcess] [TransactionId: TXN006] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN006
+[2025-04-24T21:55:58.808Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:56:01.562Z] [Info] [Process: CustomerProcess] [TransactionId: TXN007] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN007
+[2025-04-24T21:56:04.396Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:56:07.121Z] [Info] [Process: CustomerProcess] [TransactionId: TXN008] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN008
+[2025-04-24T21:56:09.863Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:56:13.473Z] [Info] [Process: CustomerProcess] [TransactionId: TXN009] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN009
+[2025-04-24T21:56:16.378Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Started Process
+[2025-04-24T21:56:19.130Z] [Info] [Process: CustomerProcess] [TransactionId: TXN010] [CorrelationId: CORR_3f23a2c0-8156-41c6-baed-a57f22b51434] Updated status to Completed for TransactionId: TXN010

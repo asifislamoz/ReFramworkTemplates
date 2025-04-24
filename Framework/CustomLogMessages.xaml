@@ -101,13 +101,13 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1172,5261.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1156,3689.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,5238.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,3666.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="logLevel" />
         <Variable x:TypeArguments="x:String" Name="timestamp" />
@@ -130,10 +130,11 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,5041.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,3356.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <Assign DisplayName="Build Log Entry" sap:VirtualizedContainerService.HintSize="537.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -325,7 +326,7 @@
             </Sequence>
           </TryCatch.Finally>
         </TryCatch>
-        <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,1778.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,84.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <Switch.Default>
             <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
@@ -342,7 +343,7 @@
           </Switch.Expression>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -604,6 +605,13 @@
             </If.Else>
           </If>
         </Sequence>
+      </Sequence>
+      <Sequence DisplayName="Error Log in DB" sap:VirtualizedContainerService.HintSize="571.2,112.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </Sequence>
     </Sequence>
   </Sequence>

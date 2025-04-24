@@ -7,6 +7,8 @@
     <x:Property Name="in_OperationType" Type="InArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_CorrelationId" Type="InArgument(x:String)" />
+    <x:Property Name="in_ErrorDetail" Type="InArgument(x:String)" />
+    <x:Property Name="in_ScreenshotPath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -101,7 +103,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateMigrationStatus" sap:VirtualizedContainerService.HintSize="892.0000000000001,2235.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateMigrationStatus" sap:VirtualizedContainerService.HintSize="941.6000000000001,2997.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ExistingRecord" />
     </Sequence.Variables>
@@ -110,21 +112,74 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Update Status In Database" sap:VirtualizedContainerService.HintSize="620.8,2212" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <If DisplayName="Check Database Connection " sap:VirtualizedContainerService.HintSize="521.6,507.2" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49" xml:space="preserve">!in_Config.ContainsKey("DbConnection") || 
+    in_Config["DbConnection"] == null || 
+    in_Config["DbConnection"].ToString() == ""</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,143.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DatabaseConnect DisplayName="Connect to Database" sap:VirtualizedContainerService.HintSize="382.4,83.2" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="Microsoft.Data.SqlClient">
+            <ui:DatabaseConnect.ConnectionString>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">in_Config["ConnectionString"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:DatabaseConnect.ConnectionString>
+            <ui:DatabaseConnect.DatabaseConnection>
+              <OutArgument x:TypeArguments="ui:DatabaseConnection">
+                <CSharpReference x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">in_DbConnection</CSharpReference>
+              </OutArgument>
+            </ui:DatabaseConnect.DatabaseConnection>
+          </ui:DatabaseConnect>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">"Database Connection is open"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Sequence DisplayName="Update Status In Database" sap:VirtualizedContainerService.HintSize="521.6,2467.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="587.2,2128.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,2384" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="550.4,1877.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486.4,1781.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="516.8,1817.6" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap:VirtualizedContainerService.HintSize="452.8,1721.6" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">in_OperationType == "Insert"</CSharpValue>
@@ -137,14 +192,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="483.2,970.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="451.2,938.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query" sap:VirtualizedContainerService.HintSize="449.6,147.2" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1">
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Run Query" sap:VirtualizedContainerService.HintSize="417.6,147.2" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1">
                     <ui:ExecuteQuery.DataTable>
                       <OutArgument x:TypeArguments="sd:DataTable">
                         <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_ExistingRecord</CSharpReference>
@@ -156,19 +211,19 @@
                       </InArgument>
                     </ui:ExecuteQuery.ExistingDbConnection>
                     <ui:ExecuteQuery.Parameters>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="@CustomerId">
-                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_CustomerId</CSharpValue>
+                      <InArgument x:TypeArguments="x:String" x:Key="@TransactionId">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">in_TransactionId</CSharpValue>
                       </InArgument>
                     </ui:ExecuteQuery.Parameters>
                     <ui:ExecuteQuery.Sql>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8" xml:space="preserve">@"SELECT CustomerId
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47" xml:space="preserve">@"SELECT CustomerId
 FROM MigrationStatus
-WHERE CustomerId = @CustomerId"</CSharpValue>
+WHERE TransactionId = @TransactionId"</CSharpValue>
                       </InArgument>
                     </ui:ExecuteQuery.Sql>
                   </ui:ExecuteQuery>
-                  <If sap:VirtualizedContainerService.HintSize="449.6,763.2" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If sap:VirtualizedContainerService.HintSize="417.6,731.2" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">dt_ExistingRecord.Rows.Count == 0</CSharpValue>
@@ -197,14 +252,23 @@ WHERE CustomerId = @CustomerId"</CSharpValue>
                             <InArgument x:TypeArguments="x:Int32" x:Key="@CustomerId">
                               <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_CustomerId</CSharpValue>
                             </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="@NewStatus">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">in_NewStatus</CSharpValue>
+                            <InArgument x:TypeArguments="x:String" x:Key="@TransactionId">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">in_TransactionId</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="@Status">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">in_NewStatus</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="@ErrorDetail">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">in_ErrorDetail</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="@ScreenshotPath">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">in_ScreenshotPath</CSharpValue>
                             </InArgument>
                           </ui:ExecuteNonQuery.Parameters>
                           <ui:ExecuteNonQuery.Sql>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14" xml:space="preserve">@"INSERT INTO MigrationStatus (CustomerId, MigrationStatus, UpdatedDate)
-VALUES (@CustomerId, @NewStatus, GETDATE())"</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55" xml:space="preserve">@"INSERT INTO MigrationStatus (CustomerId, TransactionId,MigrationStatus, UpdatedDate,ErrorDetail,ScreenshotPath)
+VALUES (@CustomerId,@TransactionId,@Status,GETDATE(),@ErrorDetail,@ScreenshotPath)"</CSharpValue>
                             </InArgument>
                           </ui:ExecuteNonQuery.Sql>
                         </ui:ExecuteNonQuery>
@@ -259,14 +323,14 @@ VALUES (@CustomerId, @NewStatus, GETDATE())"</CSharpValue>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="483.2,685.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="451.2,653.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If sap:VirtualizedContainerService.HintSize="449.6,625.6" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If sap:VirtualizedContainerService.HintSize="417.6,593.6" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">in_OperationType == "Update"</CSharpValue>
@@ -292,15 +356,15 @@ VALUES (@CustomerId, @NewStatus, GETDATE())"</CSharpValue>
                             <InArgument x:TypeArguments="x:String" x:Key="@NewStatus">
                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">in_NewStatus</CSharpValue>
                             </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="@CustomerId">
-                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">in_CustomerId</CSharpValue>
+                            <InArgument x:TypeArguments="x:String" x:Key="@TransactionId">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">in_TransactionId</CSharpValue>
                             </InArgument>
                           </ui:ExecuteNonQuery.Parameters>
                           <ui:ExecuteNonQuery.Sql>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20" xml:space="preserve">@"UPDATE MigrationStatus
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48" xml:space="preserve">@"UPDATE MigrationStatus
 SET MigrationStatus = @NewStatus, UpdatedDate = GETDATE()
-WHERE CustomerId = @CustomerId"</CSharpValue>
+WHERE TransactionId = @TransactionId"</CSharpValue>
                             </InArgument>
                           </ui:ExecuteNonQuery.Sql>
                         </ui:ExecuteNonQuery>

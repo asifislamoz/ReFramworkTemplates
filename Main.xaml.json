@@ -40,18 +40,6 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
-    },
-    {
-      "Name": "in_TransactionId",
-      "DisplayName": "in_TransactionId",
-      "Category": null,
-      "Tooltip": null,
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
     }
   ]
 }
