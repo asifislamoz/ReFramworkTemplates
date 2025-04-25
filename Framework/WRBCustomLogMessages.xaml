@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CustomLogMessages" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CustomLogMessages" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_LogMessage" Type="InArgument(x:String)" />
     <x:Property Name="in_LogLevel" Type="InArgument(x:String)" />
@@ -101,13 +101,16 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1156,3689.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1452.0000000000002,1976.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="instrumentationKey" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,3666.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,1953.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="logLevel" />
         <Variable x:TypeArguments="x:String" Name="timestamp" />
@@ -126,11 +129,11 @@
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">DateTime.Now.ToString(in_Config["LogTimeFormat"].ToString())</CSharpValue>
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">DateTime.UtcNow.ToString(in_Config["LogTimeFormat"].ToString())</CSharpValue>
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,3356.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,1756.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,7 +148,7 @@
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:String">
-              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">$"[{timestamp}] [{in_LogLevel}] [Process: {in_Config["ProcessName"]}] [TransactionId: {in_TransactionId}] [CorrelationId: {in_CorrelationId}] {in_LogMessage}"</CSharpValue>
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">$"{timestamp} {in_LogLevel} Process: {in_Config["ProcessName"]} TransactionId: {in_TransactionId} CorrelationId: {in_CorrelationId} {in_LogMessage}"</CSharpValue>
             </InArgument>
           </Assign.Value>
           <sap:WorkflowViewStateService.ViewState>
@@ -155,177 +158,6 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <If sap:VirtualizedContainerService.HintSize="537.6,574.4" sap2010:WorkflowViewState.IdRef="If_1">
-          <If.Condition>
-            <InArgument x:TypeArguments="x:Boolean">
-              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">in_AdditionalFields != null &amp;&amp; in_AdditionalFields.Count &gt; 0</CSharpValue>
-            </InArgument>
-          </If.Condition>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502.4,346.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="468.8,286.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
-                <ui:ForEach.Body>
-                  <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="item" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">logEntry</CSharpReference>
-                          </OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">logEntry + $" [{item.Key}: {item.Value}]"</CSharpValue>
-                          </InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEach.Body>
-                <ui:ForEach.Values>
-                  <InArgument x:TypeArguments="sc:IEnumerable">
-                    <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_AdditionalFields</CSharpValue>
-                  </InArgument>
-                </ui:ForEach.Values>
-              </ui:ForEach>
-            </Sequence>
-          </If.Then>
-          <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Sequence>
-          </If.Else>
-        </If>
-        <TryCatch DisplayName="Local File Logging" sap:VirtualizedContainerService.HintSize="537.6,1266.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <TryCatch.Try>
-            <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="467.2,777.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="fullLogPath" />
-              </Sequence.Variables>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">fullLogPath</CSharpReference>
-                  </OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), in_Config["LogFilePath"].ToString())</CSharpValue>
-                  </InArgument>
-                </Assign.Value>
-              </Assign>
-              <If sap:VirtualizedContainerService.HintSize="433.6,446.4" sap2010:WorkflowViewState.IdRef="If_3">
-                <If.Condition>
-                  <InArgument x:TypeArguments="x:Boolean">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">!Directory.Exists(Path.GetDirectoryName(fullLogPath))</CSharpValue>
-                  </InArgument>
-                </If.Condition>
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="382.4,158.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="CreateDirectory" TargetType="si:Directory">
-                      <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">Path.GetDirectoryName(fullLogPath)</CSharpValue>
-                      </InArgument>
-                    </InvokeMethod>
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
-                </If.Else>
-              </If>
-              <ui:AppendLine File="{x:Null}" DisplayName="Append Line" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="AppendLine_1" UseDefaultEncoding="False">
-                <ui:AppendLine.FileName>
-                  <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">in_Config["LogFilePath"].ToString()</CSharpValue>
-                  </InArgument>
-                </ui:AppendLine.FileName>
-                <ui:AppendLine.Text>
-                  <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">logEntry</CSharpValue>
-                  </InArgument>
-                </ui:AppendLine.Text>
-              </ui:AppendLine>
-            </Sequence>
-          </TryCatch.Try>
-          <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-              <ActivityAction x:TypeArguments="s:Exception">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,225.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error">
-                    <ui:LogMessage.Message>
-                      <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Failed to write to log file: " + exception.Message</CSharpValue>
-                      </InArgument>
-                    </ui:LogMessage.Message>
-                  </ui:LogMessage>
-                </Sequence>
-              </ActivityAction>
-            </Catch>
-          </TryCatch.Catches>
-          <TryCatch.Finally>
-            <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Sequence>
-          </TryCatch.Finally>
-        </TryCatch>
         <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,84.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <Switch.Default>
             <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -447,7 +279,7 @@
             </Assign>
           </Sequence>
         </Switch>
-        <Sequence DisplayName="External Logging" sap:VirtualizedContainerService.HintSize="537.6,1225.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="External Logging" sap:VirtualizedContainerService.HintSize="537.6,1475.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="formattedLogMessage" />
             <Variable x:TypeArguments="x:String" Name="jsonBody" />
@@ -459,17 +291,24 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap:VirtualizedContainerService.HintSize="504,1142.4" sap2010:WorkflowViewState.IdRef="If_2">
+          <If sap:VirtualizedContainerService.HintSize="504,1392" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">in_Config["EnableExternalLogging"].ToString().ToLower() == "true"</CSharpValue>
               </InArgument>
             </If.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502.4,923.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502.4,1036.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
@@ -480,7 +319,19 @@
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">$"[{timestamp}] [{in_LogLevel}] [Process: {in_Config["ProcessName"]}] [TransactionId: {in_TransactionId}] [CorrelationId: {in_CorrelationId}] {in_LogMessage}"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">$"{timestamp} {in_LogLevel} Process: {in_Config["ProcessName"]} TransactionId: {in_TransactionId} CorrelationId: {in_CorrelationId} {in_LogMessage}"</CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">instrumentationKey</CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">in_Config["InstrumentationKey"].ToString()</CSharpValue>
                     </InArgument>
                   </Assign.Value>
                 </Assign>
@@ -500,23 +351,26 @@
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44" xml:space="preserve">$@"{{
-  ""name"": ""Microsoft.ApplicationInsights.c97c1158-d2f5-4e66-9cc1-0961733072c9.Message"",
-  ""time"": ""{DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")}"",
-  ""iKey"": ""c97c1158-d2f5-4e66-9cc1-0961733072c9"",
-  ""data"": {{
-    ""baseType"": ""MessageData"",
-    ""baseData"": {{
-      ""message"": ""{System.Web.HttpUtility.JavaScriptStringEncode(formattedLogMessage)}"",
-      ""severityLevel"": ""{logLevel}"",
-      ""properties"": {{
-        ""TransactionId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_TransactionId)}"",
-        ""CorrelationId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_CorrelationId)}"",
-        ""Environment"": ""DEV""
-      }}
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57" xml:space="preserve">$@"{{
+    ""name"": ""Microsoft.ApplicationInsights.Message"",
+    ""time"": ""{timestamp}"",
+    ""iKey"": ""{instrumentationKey}"",
+     
+    ""data"": {{
+        ""baseType"": ""MessageData"",
+        ""baseData"": {{
+            ""message"": ""{System.Web.HttpUtility.JavaScriptStringEncode(formattedLogMessage)}"",
+            ""severityLevel"": ""{logLevel}"",
+			""CorrelationId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_CorrelationId)}"",
+            ""properties"": {{
+                ""LogLevel"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_LogLevel)}"",
+                ""ProcessName"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_Config.ContainsKey("ProcessName") ? in_Config["ProcessName"].ToString() : "Unknown")}"",
+                ""TransactionId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_TransactionId)}"",
+                ""CorrelationId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_CorrelationId)}""
+            }}
+        }}
     }}
-  }}
-}}";</CSharpValue>
+}}"</CSharpValue>
                           </InArgument>
                         </Assign.Value>
                       </Assign>
@@ -595,23 +449,24 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.4,225.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info">
+                  <ui:LogMessage.Message>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">"External logging is not enabled"</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Message>
+                </ui:LogMessage>
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
-      </Sequence>
-      <Sequence DisplayName="Error Log in DB" sap:VirtualizedContainerService.HintSize="571.2,112.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
       </Sequence>
     </Sequence>
   </Sequence>

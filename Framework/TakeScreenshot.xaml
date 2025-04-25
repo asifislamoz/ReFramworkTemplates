@@ -2,7 +2,6 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Path to the folder where the screenshot should be saved." Name="in_Folder" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Optional argument that specifies the path and the name of the screenshot to be taken." Name="io_FilePath" Type="InOutArgument(x:String)" />
-    <x:Property Name="argument1" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1382,1424.6666666666667</sap:VirtualizedContainerService.HintSize>
@@ -77,7 +76,7 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Capture a screenshot, log its name and location and save it with the PNG extension.&#xA;If no specific filepath is passed as argument, it saves the image in the folder specified by in_Folder." DisplayName="Take and Save Screenshot" sap:VirtualizedContainerService.HintSize="941.6000000000001,1138.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Capture a screenshot, log its name and location and save it with the PNG extension.&#xA;If no specific filepath is passed as argument, it saves the image in the folder specified by in_Folder." DisplayName="Take and Save Screenshot" sap:VirtualizedContainerService.HintSize="1452.0000000000002,1137.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
       <Variable x:TypeArguments="si:FileInfo" Name="ScreenshotFileInfo" />
@@ -143,7 +142,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign DisplayName="Initialize ScreenshotFileInfo" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Initialize ScreenshotFileInfo" sap:VirtualizedContainerService.HintSize="435.2,112.8" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="si:FileInfo">
           <CSharpReference x:TypeArguments="si:FileInfo" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">ScreenshotFileInfo</CSharpReference>

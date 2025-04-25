@@ -99,7 +99,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetTransactionFromDb" sap:VirtualizedContainerService.HintSize="941.6000000000001,1602.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetTransactionFromDb" sap:VirtualizedContainerService.HintSize="1156,1602.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Transactions" />
     </Sequence.Variables>
