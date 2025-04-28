@@ -101,7 +101,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1452.0000000000002,1976.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1156,1948.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="instrumentationKey" />
     </Sequence.Variables>
@@ -110,7 +110,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,1953.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,1925.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="logLevel" />
         <Variable x:TypeArguments="x:String" Name="timestamp" />
@@ -133,7 +133,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,1756.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,1728.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +158,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,84.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,56.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <Switch.Default>
             <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
@@ -425,7 +425,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace">
                             <ui:LogMessage.Message>
                               <InArgument x:TypeArguments="x:Object">
                                 <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">"Error while sending log to Azure App Insight:"+ exception.ToString()</CSharpValue>
