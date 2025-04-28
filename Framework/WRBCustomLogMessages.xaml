@@ -6,6 +6,7 @@
     <x:Property Name="in_CorrelationId" Type="InArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_AdditionalFields" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="in_RetryCount" Type="InArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -99,9 +100,10 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1156,1948.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CustomLogMessages" sap:VirtualizedContainerService.HintSize="1156,4048" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="instrumentationKey" />
     </Sequence.Variables>
@@ -110,7 +112,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,1925.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Custom Log Message" sap:VirtualizedContainerService.HintSize="604.8,4024.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="logLevel" />
         <Variable x:TypeArguments="x:String" Name="timestamp" />
@@ -133,7 +135,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,1728.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Process Log" sap:VirtualizedContainerService.HintSize="571.2,3828" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +160,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </Assign>
-        <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,56.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <Switch x:TypeArguments="x:String" DisplayName="Orchestrator Logging" sap:VirtualizedContainerService.HintSize="537.6,2156" sap2010:WorkflowViewState.IdRef="Switch`1_1">
           <Switch.Default>
             <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
@@ -175,7 +177,7 @@
           </Switch.Expression>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -278,6 +280,30 @@
               </Assign.Value>
             </Assign>
           </Sequence>
+          <Sequence x:Key="Critical" DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,339.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Fatal">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">logEntry</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">
+                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">logLevel</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">4</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
         </Switch>
         <Sequence DisplayName="External Logging" sap:VirtualizedContainerService.HintSize="537.6,1475.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <Sequence.Variables>
@@ -351,7 +377,7 @@
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57" xml:space="preserve">$@"{{
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61" xml:space="preserve">$@"{{
     ""name"": ""Microsoft.ApplicationInsights.Message"",
     ""time"": ""{timestamp}"",
     ""iKey"": ""{instrumentationKey}"",
@@ -366,7 +392,9 @@
                 ""LogLevel"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_LogLevel)}"",
                 ""ProcessName"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_Config.ContainsKey("ProcessName") ? in_Config["ProcessName"].ToString() : "Unknown")}"",
                 ""TransactionId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_TransactionId)}"",
-                ""CorrelationId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_CorrelationId)}""
+                ""CorrelationId"": ""{System.Web.HttpUtility.JavaScriptStringEncode(in_CorrelationId)}"",
+				""ErrorDetail"":""{System.Web.HttpUtility.JavaScriptStringEncode(in_LogMessage)}"",
+				""RetryCount"":""{System.Web.HttpUtility.JavaScriptStringEncode(in_RetryCount.ToString())}""
             }}
         }}
     }}

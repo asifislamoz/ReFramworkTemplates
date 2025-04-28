@@ -99,7 +99,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="1172.8,562.84" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="1172.8,563.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -370,12 +370,27 @@
                         <TryCatch.Try>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetTransactionData workflow" sap:VirtualizedContainerService.HintSize="467.2,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Framework\WRBGetTransactionFromDb.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
-                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection" />
-                              <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_TransactionItem" />
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber" />
-                              <OutArgument x:TypeArguments="x:Int32" x:Key="out_TransactionNumber" />
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_TransactionId" />
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_207">Config</CSharpValue>
+                              </InArgument>
+                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection">
+                                <CSharpValue x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpValue`1_208">DBConnection</CSharpValue>
+                              </InArgument>
+                              <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_TransactionItem">
+                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">TransactionItem</CSharpReference>
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_209">TransactionNumber</CSharpValue>
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:Int32" x:Key="out_TransactionNumber">
+                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">TransactionNumber</CSharpReference>
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_TransactionId">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">TransactionID</CSharpReference>
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_210">CorrelationId</CSharpValue>
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </TryCatch.Try>
@@ -571,22 +586,47 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log Message - Failed to Set Transaction Status Success" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Framework\\WRBCustomLogMessages.xaml">
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (BRE)" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_LogMessage">
-                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_135">"SetTransactionStatus.xaml failed: "+exception.Message+" at Source: "+exception.Source</CSharpValue>
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_LogLevel">Fatal</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
-                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">TransactionID</CSharpValue>
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
-                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_136">CorrelationId</CSharpValue>
+                                            <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">
+                                              <CSharpValue x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpValue`1_197">BusinessException</CSharpValue>
                                             </InArgument>
                                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                              <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_137">Config</CSharpValue>
+                                              <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_198">Config</CSharpValue>
                                             </InArgument>
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+                                            <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
+                                              <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_199">TransactionItem</CSharpValue>
+                                            </InArgument>
+                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">
+                                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_51">RetryNumber</CSharpReference>
+                                            </InOutArgument>
+                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">
+                                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">TransactionNumber</CSharpReference>
+                                            </InOutArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_200">TransactionField1</CSharpValue>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_201">TransactionField2</CSharpValue>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_202">TransactionID</CSharpValue>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">
+                                              <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203">null</CSharpValue>
+                                            </InArgument>
+                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">
+                                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">ConsecutiveSystemExceptions</CSharpReference>
+                                            </InOutArgument>
+                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_CustomerId">
+                                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_204">CustomerId</CSharpValue>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection">
+                                              <CSharpValue x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">DBConnection</CSharpValue>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_206">CorrelationId</CSharpValue>
+                                            </InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
                                         <Rethrow sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
@@ -723,6 +763,7 @@
                                                   <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_140">Config</CSharpValue>
                                                 </InArgument>
                                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
                                             <Rethrow sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
@@ -922,11 +963,19 @@
                           <Transition.Action>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GlobalExceptionHandler - Invoke Workflow File (Framework\GlobalExceptionHandler.xaml)" sap:VirtualizedContainerService.HintSize="348.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Framework\GlobalExceptionHandler.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
-                                <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId" />
-                                <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId" />
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                  <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_211">Config</CSharpValue>
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_212">TransactionID</CSharpValue>
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_213">CorrelationId</CSharpValue>
+                                </InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="filePath" />
-                                <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection" />
+                                <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection">
+                                  <CSharpValue x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpValue`1_214">DBConnection</CSharpValue>
+                                </InArgument>
                                 <InArgument x:TypeArguments="uico:ExceptionHandlerArgs" x:Key="errorInfo" />
                                 <OutArgument x:TypeArguments="uico:ErrorAction" x:Key="result" />
                               </ui:InvokeWorkflowFile.Arguments>
@@ -951,21 +1000,7 @@
                           <Transition.Action>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GlobalExceptionHandler - Invoke Workflow File (Framework\GlobalExceptionHandler.xaml)" sap:VirtualizedContainerService.HintSize="348.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Framework\GlobalExceptionHandler.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                  <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_188">Config</CSharpValue>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
-                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_189">TransactionID</CSharpValue>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_CorrelationId">
-                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_190">CorrelationId</CSharpValue>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="filePath" />
-                                <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection">
-                                  <CSharpValue x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpValue`1_191">DBConnection</CSharpValue>
-                                </InArgument>
-                                <InArgument x:TypeArguments="uico:ExceptionHandlerArgs" x:Key="errorInfo" />
-                                <OutArgument x:TypeArguments="uico:ErrorAction" x:Key="result" />
+                                <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                           </Transition.Action>

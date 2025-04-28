@@ -6,6 +6,8 @@
   "dependencies": {
     "UiPath.Database.Activities": "[1.10.0]",
     "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.Mail.Activities": "[1.24.2]",
+    "UiPath.MicrosoftOffice365.Activities": "[3.0.14]",
     "UiPath.System.Activities": "[24.10.7]",
     "UiPath.Testing.Activities": "[24.10.3]",
     "UiPath.UIAutomation.Activities": "[24.10.10]",
