@@ -4,7 +4,6 @@
     <x:Property Name="in_DbConnection" Type="InArgument(ui:DatabaseConnection)" />
     <x:Property Name="out_TransactionItem" Type="OutArgument(sd:DataRow)" />
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
-    <x:Property Name="out_TransactionNumber" Type="OutArgument(x:Int32)" />
     <x:Property Name="out_TransactionId" Type="OutArgument(x:String)" />
     <x:Property Name="in_CorrelationId" Type="InArgument(x:String)" />
   </x:Members>
@@ -202,7 +201,7 @@ ORDER BY cs.CustomerId
                   <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">
-                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">out_TransactionNumber</CSharpReference>
+                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">in_TransactionNumber</CSharpReference>
                       </OutArgument>
                     </Assign.To>
                     <Assign.Value>

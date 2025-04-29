@@ -182,6 +182,7 @@
                 <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">out_Config</CSharpValue>
               </InArgument>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -313,6 +314,7 @@
           <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">out_Config</CSharpValue>
         </InArgument>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <TryCatch DisplayName="Try initializing assets" sap:VirtualizedContainerService.HintSize="529.6,1627.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">

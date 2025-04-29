@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="UpdateMigrationStatus" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CustomerId" Type="InArgument(x:Int32)" />
@@ -102,9 +101,10 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateMigrationStatus" sap:VirtualizedContainerService.HintSize="941.6000000000001,2997.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateMigrationStatus" sap:VirtualizedContainerService.HintSize="1156,2997.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ExistingRecord" />
     </Sequence.Variables>
@@ -289,6 +289,7 @@ VALUES (@CustomerId,@TransactionId,@Status,GETDATE(),@ErrorDetail,@ScreenshotPat
                               <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">in_Config</CSharpValue>
                             </InArgument>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -316,6 +317,7 @@ VALUES (@CustomerId,@TransactionId,@Status,GETDATE(),@ErrorDetail,@ScreenshotPat
                               <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">in_Config</CSharpValue>
                             </InArgument>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -360,11 +362,17 @@ VALUES (@CustomerId,@TransactionId,@Status,GETDATE(),@ErrorDetail,@ScreenshotPat
                             <InArgument x:TypeArguments="x:String" x:Key="@TransactionId">
                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">in_TransactionId</CSharpValue>
                             </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="@ScreenshotPath">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">in_ScreenshotPath</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="@ErrorDetail">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">in_ErrorDetail</CSharpValue>
+                            </InArgument>
                           </ui:ExecuteNonQuery.Parameters>
                           <ui:ExecuteNonQuery.Sql>
                             <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48" xml:space="preserve">@"UPDATE MigrationStatus
-SET MigrationStatus = @NewStatus, UpdatedDate = GETDATE()
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58" xml:space="preserve">@"UPDATE MigrationStatus
+SET MigrationStatus = @NewStatus, UpdatedDate = GETDATE(),ErrorDetail = @ErrorDetail, ScreenshotPath = @ScreenshotPath
 WHERE TransactionId = @TransactionId"</CSharpValue>
                             </InArgument>
                           </ui:ExecuteNonQuery.Sql>
@@ -385,6 +393,7 @@ WHERE TransactionId = @TransactionId"</CSharpValue>
                               <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">in_Config</CSharpValue>
                             </InArgument>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
