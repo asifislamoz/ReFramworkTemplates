@@ -279,6 +279,7 @@ ORDER BY cs.CustomerId
                       <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">in_Config</CSharpValue>
                     </InArgument>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_AdditionalFields" />
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCount" />
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>

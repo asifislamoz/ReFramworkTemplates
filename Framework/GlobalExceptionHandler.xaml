@@ -108,7 +108,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GlobalExceptionHandler" sap:VirtualizedContainerService.HintSize="1452.0000000000002,2258.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GlobalExceptionHandler" sap:VirtualizedContainerService.HintSize="1156,2258.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
       <Variable x:TypeArguments="x:String" Name="ScreenshotsFolder" />
@@ -286,7 +286,7 @@
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="uico:ErrorAction">
-                  <CSharpValue x:TypeArguments="uico:ErrorAction" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">ErrorAction.Abort</CSharpValue>
+                  <CSharpValue x:TypeArguments="uico:ErrorAction" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">ErrorAction.Continue</CSharpValue>
                 </InArgument>
               </Assign.Value>
             </Assign>
