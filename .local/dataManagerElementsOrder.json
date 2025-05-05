@@ -3,9 +3,7 @@
     {
       "Path": null,
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "appWindow&"
-      ],
+      "VariablesSectionElementsOrder": null,
       "ArgumentsSectionElementsOrder": null,
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -14,7 +12,6 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "appWindow&56f5257d-6bc2-4c8a-ab49-2d05d3d7c755",
         "SystemException&StateMachine_1",
         "TransactionItem&StateMachine_1",
         "BusinessException&StateMachine_1",
@@ -29,8 +26,10 @@
         "appWindow&StateMachine_1",
         "DBConnection&StateMachine_1",
         "CustomerId&StateMachine_1",
+        "CorrelationId&StateMachine_1",
         "ShouldStop&Sequence_5",
-        "variable1&Sequence_6"
+        "variable1&Sequence_6",
+        "appWindow&5bbef7c4-9548-441b-b20b-2a86092e7ca8"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_OrchestratorQueueName",
@@ -41,10 +40,79 @@
       "AddedNamespaces": null
     },
     {
+      "Path": "Framework/WRBGetTransactionFromDb.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&9cea0b6c-b4ac-4f20-a619-385fc744264f",
+        "dt_Transactions&Sequence_1",
+        "Nothing&Sequence_7"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_DbConnection",
+        "out_TransactionItem",
+        "in_TransactionNumber",
+        "out_TransactionNumber",
+        "out_TransactionId"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/WRBCustomLogMessages.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&5bbef7c4-9548-441b-b20b-2a86092e7ca8",
+        "instrumentationKey&Sequence_1",
+        "logLevel&Sequence_2",
+        "timestamp&Sequence_2",
+        "logEntry&Sequence_2",
+        "in_LogMessage&Sequence_10",
+        "formattedLogMessage&Sequence_15",
+        "jsonBody&Sequence_15",
+        "respStatus&Sequence_15",
+        "responseContent&Sequence_15"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_RetryCount",
+        "in_LogMessage",
+        "in_LogLevel",
+        "in_TransactionId",
+        "in_CorrelationId",
+        "in_Config",
+        "in_AdditionalFields"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GlobalExceptionHandler.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "appWindow&5bbef7c4-9548-441b-b20b-2a86092e7ca8",
+        "workflowArguments&Sequence_2",
+        "Screenshot&Sequence_1",
+        "ScreenshotsFolder&Sequence_1",
+        "variable1&Sequence_1",
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_TransactionId",
+        "in_CorrelationId",
+        "filePath",
+        "in_DbConnection",
+        "errorInfo",
+        "result"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
       "Path": "Framework/CloseAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "appWindow&bbcb42a9-e2c8-4d40-a9c4-b83228d7c26f"
+        "appWindow&9cea0b6c-b4ac-4f20-a619-385fc744264f"
       ],
       "ArgumentsSectionElementsOrder": [
         "Config"
@@ -53,37 +121,14 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Framework/DatabaseOperations.xaml",
+      "Path": "Framework/KillAllProcesses.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "appWindow&bbcb42a9-e2c8-4d40-a9c4-b83228d7c26f"
+        "appWindow&9cea0b6c-b4ac-4f20-a619-385fc744264f"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_QueueItem",
-        "in_TransactionData",
-        "in_Status",
-        "in_ErrorMessage",
-        "in_Config",
-        "out_Result",
-        "argument1"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Framework/GetTransactionData.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "appWindow&56f5257d-6bc2-4c8a-ab49-2d05d3d7c755"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_TransactionNumber",
-        "in_Config",
-        "out_TransactionItem",
-        "out_TransactionField1",
-        "out_TransactionField2",
-        "out_TransactionID",
-        "io_dt_TransactionData"
+        "in_CorrelationId",
+        "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -92,9 +137,8 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "appWindow&56f5257d-6bc2-4c8a-ab49-2d05d3d7c755",
+        "appWindow&5bbef7c4-9548-441b-b20b-2a86092e7ca8",
         "CustomerId&Sequence_2",
-        "TransactionId&Sequence_2",
         "FirstName&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -103,7 +147,12 @@
         "in_appWindow",
         "in_TransactionNumber",
         "out_CustomerId",
-        "out_TransactionId"
+        "out_TransactionId",
+        "CorrelationId",
+        "in_TransactionId",
+        "in_DBConnection",
+        "value",
+        "argument1"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
